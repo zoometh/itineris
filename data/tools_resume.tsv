@@ -1,4 +1,4 @@
-wp	task	tool name	description	output
+WP	Task	tool name	description	output
 WP2	T2.A	LA-ICP-MS	LA-ICP-MS (Laser Ablation Inductively Coupled Plasma Mass Spectrometry) or ICP-MS (Inductively Coupled Plasma Mass Spectrometry) is a powerful analytical technology that enables highly sensitive elemental and isotopic analysis to be performed directly on solid samples	XXX
 WP2	T2.A	Agilent 8900 ICP-MS-MS	LA-ICP-MS (Laser Ablation Inductively Coupled Plasma Mass Spectrometry) or ICP-MS (Inductively Coupled Plasma Mass Spectrometry) is a powerful analytical technology that enables highly sensitive elemental and isotopic analysis to be performed directly on solid samples	XXX
 WP2	T2.B	Thermo Scientific Neptune MC-ICP-MS	MC-ICP-MS (Multicollector Inductively Coupled Plasma Mass Spectrometry)	XXX
