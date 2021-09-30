@@ -10,10 +10,11 @@ WP2	T2.C	IRTF	Fourier Transform InfraRed spectroscopy	XXX
 WP2	T2.C	XRD	X-Ray Difraction	XXX
 WP2	T3	Radiography	X-Ray Radiography	XXX
 WP2	T4	Aicon SmartScan with OptoCat	3D Structured ligth scanning with OptoCat software	.stl, .ply
-WP2	T4	PhotoScan Pro and 3DReshaper	3D photogrammetry and 3D point processing	.ply, .u3D
+WP2	T4	PhotoScan Pro and 3DReshaper	3D photogrammetry and 3D point processing	.ply, .u3D, .x3d
 WP2	T4	Digital Camera	Digital Camera	.tiff, .raw, EXIF metadata
 WP3	T5.B	Iso-standards	ISO standards (Institution Organization for Standardization) for data description (eg. ISO 25178, TEI, Dublin Core, CIDOC-CRM, etc.)	.json, .rdf, etc.
-WP3	T5.B	Programming languages (eg. R, Python) and open-source software (eg. QGIS)	Open-source scripting languages and sofwares for software interoperability and analysis routines	.R, .pyw, .json, .geojson, .qgs, ...
+WP3	T5.B	Programming languages (eg. R, Python)	Open-source scripting languages for software interoperability and analysis routines	.R, .pyw, .json, etc.
+WP3	T5.B	Open-source software (eg. QGIS)	Open-source sofwares for software interoperability	.geojson, .shp, .qgs, etc.
 WP3	T5.B	Active reporting (eg. Rmarkdown, Jupyter)	Authoring framework for data science and data driven document	.Rmd, .json, .html
 WP3	T5.B	Interactive web visualization (eg. RShiny)	Shiny and Plotly interactive web apps for data science	.R, .json, .html
 WP3	T5.B	Open-access repository	Open-access and restricted-access to Data Warehouse (eg. Huma-Num ShareDocs, GitLab)	 URL, DOI (plain text files, apps, etc.)
