@@ -1,0 +1,22 @@
+wp	task	tool name	description	output
+WP2	T2.A	LA-ICP-MS	XXX	XXX
+WP2	T2.A	Agilent 8900 ICP-MS-MS	XXX	XXX
+WP2	T2.B	Thermo Scientific Neptune Multi-collector ICP±MS	XXX	XXX
+WP2	T2.B	Scanning Electron Microscopy (SEM)	XXX	XXX
+WP2	T2.B	Energy Dispersive Spectrometer (EDS)	XXX	XXX
+WP2	T2.B	Nikon Eclipse ME600 microscope	XXX	XXX
+WP2	T2.C	Raman	XXX	XXX
+WP2	T2.C	IRTF	XXX	XXX
+WP2	T2.C	XRD	XXX	XXX
+WP2	T3	X-radiography	XXX	XXX
+WP2	T4	Aicon SmartScan with OptoCat	XXX	XXX
+WP2	T4	3DReshaper and PhotoScan Pro	XXX	XXX
+WP2	T4	Digital Photograph	XXX	XXX
+WP3	T5.B	Programming languages (eg. R) and software (eg. QGIS)	XXX	XXX
+WP3	T5.B	Iso-standards for data description	XXX	XXX
+WP3	T5.B	Open-access repository	XXX	XXX
+WP3	T5.B	Active reporting (eg. Rmarkdown)	XXX	XXX
+WP3	T5.B	Interactive web visualization (eg. RShiny)	XXX	XXX
+WPF	T6	GitHub account to converge actions	XXX	XXX
+WPF	T6	GitLab account to share methods and tools	XXX	XXX
+WPF	T6	Website for scholars and large public	XXX	XXX
