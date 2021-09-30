@@ -1,5 +1,5 @@
 ---
-title: "<b>Plan de Gestion des données</b><br> Projet ANR <span style='font-size: 55px; font-family: monospace;'><b>ITINERIS</b></span> <br> dans le contexte de la Science Ouverte"
+title: "<b>Plan de Gestion des données</b><br> du projet ANR <b>ITINERIS</b><br>"
 bibliography: "D:/DocumentationArcheo/biblio12.bib"
 # bibliography: "C:/Users/supernova/Dropbox/My PC (supernova-pc)/Documents/golasecca/bibliographie.bib"
 # author: "Thomas Huet"
@@ -18,7 +18,7 @@ output:
 url.root <- "https://raw.githubusercontent.com/zoometh/itineris/main/www/"
 htmltools::img(src = paste0(url.root, "logo.png"), 
                alt = 'logo', 
-               width = '200px',
+               width = '250px',
                style = 'position:absolute; top:0; right:0; padding:10px;')
 ```
 
@@ -37,6 +37,7 @@ library(knitr)
 library(shiny)
 library(visNetwork)
 library(stringi)
+library(stringr)
 library(rdflib)
 library(openxlsx)
 library(rgdal)
@@ -51,8 +52,20 @@ library(leaflet)
 
 text.size <- 15
 
+# informations résumé
+data.base <- 'https://raw.github.com/zoometh/itineris/master/data/'
+url.data.res <- paste0(data.base, 'data_resume.tsv')
+data.res <- read.table(url.data.res, header = T, sep = "\t", row.names = NULL)
+url.tools.res <- paste0(data.base, 'tools_resume.tsv')
+url.isos.res <- paste0(data.base, 'isos_resume.tsv')
+
+
+
+n.sites <- sum(data.res$nb.sites)
+n.obj <- sum(data.res$nb.obj)
+
 base <- "https://github.com/zoometh/itineris/tree/main/"
-inst.logo.root <- "https://raw.githubusercontent.com/zoometh/golasecca/main/www/inst/"
+inst.logo.root <- "https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/"
 # load(file=paste0(base,"df_per_count.RData"))
 # getwd()
 # load("LOD/df_per_count.RData")
@@ -220,25 +233,36 @@ network <- visNetwork(nodes, edges,
                       width = "900px", height = "900px")
 ```
 
-# Présentation
+# Informations générales
 
-En Italie du Nord, la territorialisation se renforce au cours de l'âge du Fer et s'accompagne d'une accélération du processus d'ethnicisation. C'est ce processus, entendu comme le produit de '*l’organisation sociale de la différence culturelle*' [@Barth69], que le projet <span style='font-family: monospace;'><b>Itiners</b></span> (coord. Veronica Cicolani) entend documenter à travers une étude des sous-systèmes techniques (chaîne opératoire, matières premières), culturels (notion de '*style*' @Sackett89, @Sackett77) et spatiaux des objets métalliques en circulation 
-
-```{r calibrate, fig.height= 14, fig.width= 14, echo=FALSE, fig.align='center', fig.cap="Description des *Work packages* (WP), *task* (T.) et des acteurs institutionnels"}
-network
+```{r info-gen, echo = F}
+df.info <- data.frame("Acronyme" = "Itineris",
+                      "Code décision" = "XXXX",
+                      "Titre" = "XXXX",
+                      "Coordinateur" = "Veronica Ciccolani",
+                      "Affiliation" = "AOROC",
+                      "Contact PGD" = "Thomas Huet",
+                      "Version du PGD" = 1,
+                      "Date" = format(Sys.time(), '%d %B %Y'),
+                      stringsAsFactors = F
+)
+df.info.t <- t(df.info)
+kable(df.info.t,"html",
+      #  escape = F,
+      # row.names = F,
+      caption = "Informations générales") %>%
+  # collapse_rows() %>%
+  kable_styling(full_width = FALSE,
+                position = "left",
+                font_size = 12)
 ```
-
-Ce document [R](https://www.r-project.org/) + [Markdown](https://rmarkdown.rstudio.com/) cherche à illustrer de manière interactive le [plan de gestion des données](#pgd) du projet ANR <span style='font-family: monospace;'><b>ITINERIS</b></span>, notamment en utilisant les services d'infrastructuration des données d'[Huma-Num](#humanum) dans un contexte d'ouverture et de référencement de l'information scientifique ([Science Ouverte](#openscience)) 
-
-<!-- ## Etapes {#wp3.step} -->
-
 
 # Plan de gestion des données {#pgd}
 
-Le plan de gestion des données (PGD, *data management plan*)  suivra les recommandations européennes H2020 pour la science ouverte et la gestion ouverte des données de recherche. 
+Le plan de gestion des données (PGD, *data management plan*)  suivi par l'ANR Itineris est celui recommendé par le [COmité pour la Science Ouverte (CoSo)](https://www.ouvrirlascience.fr/the-committee-for-open-science/). Il est partagé par l'ensemble des [partenaires](#part) de l'ANR, s'appuie sur les services d'infrastructuration des données d'[Huma-Num](#humanum), etc.
 
 ```{r dmp, echo=F, fig.align='center', fig.height= 7, fig.width= 7, fig.cap="Plan de gestion des données du projet ITINERIS"}
-dmg.steps <- c("collecte", 
+dmg.steps <- c("collecte\nréutilisation", 
                "description",
                "stockage",
                "analyses",
@@ -251,7 +275,7 @@ dmg.steps.url <- c("#wp3.step.collec",
                    "#wp3.step.archiv",
                    "#wp3.step.public")
 dmg.steps.tit <- paste0("<a href='",dmg.steps.url,"'>",dmg.steps,"</a>")
-dmp.logo.root <- "https://raw.githubusercontent.com/zoometh/golasecca/main/LOD/www/dmp/"
+dmp.logo.root <- "https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/"
 name.im <- c(paste0(dmp.logo.root, "data_create.png"),
              paste0(dmp.logo.root, "data_tag.png"),
              paste0(dmp.logo.root, "data_store.png"),
@@ -287,139 +311,172 @@ visNetwork(nodes, edges,
 
 
 
-### Collecte {#wp3.step.collec}
+## Collecte et réutilisation des données {#wp3.step.collec}
 
-L'étude portera sur quelques 1,200 objets en alliage de cuivre provenant de 6 sites archéologiques. Parallèlement, une révision des corpus déjà publiés sera opérée.
+L'étude portera sur quelques <span style="color:darkgrey">`r n.obj`</span> objets en alliage de cuivre provenant de <span style="color:darkgrey">`r n.sites`</span> sites archéologiques. Parallèlement, une révision des corpus déjà publiés sera opérée. 
 
-
-Pour répondre aux principes du FAIR, et particulièrement de la possibilité de réutiliser les données ([*Réutilisable*](#FAIRR))  ces données seront renseignées en terme de: 
-
-* provenance
-* méthodes employées
-* instrumentation utilisée
-* types
-  - images
-  - tableurs
-  - objets 3D
-  - *shapefiles*
-  - etc.
-* formats
-  - `.csv`
-  - `.obj`
-  - etc.
 * volumes
-* métadonnées
-  - [TEI](https://tei-c.org/)
-  - [Dublin Core](https://dublincore.org/)
-  - etc.
+
+### Provenance des données
+
+*`r stri_rand_lipsum(1)`*
+
+#### Données réutilisées
+
+*`r stri_rand_lipsum(1)`*
+
+#### Données indédites
+
+*`r stri_rand_lipsum(1)`*
+
+### Volumes des données
+
+*`r stri_rand_lipsum(1)`*
+
+### Outils et méthodes
+
+Les outils et les méthodes employées seront:
+
+```{r methods-tools, echo = F}
+tools.res <- read.table(url.tools.res, header = T, sep = "\t", row.names = NULL)
+tools.res$output <- str_replace(tools.res$output, ".geojson", "[.geojson](#Fgeojson)")
+tools.res$output <- str_replace(tools.res$output, ".json", "[.json](#Fjson)")
+tools.res$output <- str_replace(tools.res$output, ".ply", "[.ply](#Fply)")
+tools.res$output <- str_replace(tools.res$output, ".rdf", "[.rdf](#Frdf)")
+tools.res$output <- str_replace(tools.res$output, ".shp", "[.txt](#Fshp)")
+tools.res$output <- str_replace(tools.res$output, ".u3d", "[.u3d](#Fu3d)")
+tools.res$output <- str_replace(tools.res$output, ".txt", "[.txt](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, ".csv", "[.csv](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, ".tsv", "[.tsv](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, ".x3d", "[.x3d](#Fx3d)")
+tools.res$output <- str_replace(tools.res$output, ".wkt", "[.wkt](#Fplaintext)")
+kable(tools.res,"html",
+      row.names = F,
+      caption = "Outils et méthodes") %>%
+  collapse_rows() %>%
+  kable_styling(full_width = FALSE,
+                position = "center",
+                font_size = 12)
+```
 
 
 ### Description {#wp3.step.describ}
 
-Les données seront décrites selon les ISO-standards, des thésaurus (i.e., vocabulaires contrôlés, *shared vocabularies*) déjà existants et par de nouveaux thésaurus. Ces premiers sont une liste de référentiels possibles, leur choix est en cours de réflexion.
+Les données et métadonnées seront décrites selon les ISO-standards, des thésaurus (i.e., vocabulaires contrôlés, *shared vocabularies*) déjà existants et par de nouveaux thésaurus. Ci-dessous nous établissons une liste de référentiels possibles.
 
 
 ```{r isosdf, echo=F}
-base.iso.url <- "https://www.iso.org/"
-description <- c("Production d'une documentation technique",
-                 "Caractéristiques nominales des instruments à contact (palpeur)",
-                 "Terminologie, description et paramètres",
-                 "Règles et procédures de mesures",
-                 "Étalonnage matériel et logiciel",
-                 "Étalonnage matériel et logiciel",
-                 "Étalonnage motifs",
-                 "Étalonnage des ICs, surfaces ayant des propriétés fonctionnelles différentes suivant les niveaux",
-                 "Étalonnage des ICs, surfaces ayant des propriétés fonctionnelles différentes suivant les niveaux",
-                 "Étalonnage des ICs, surfaces ayant des propriétés fonctionnelles différentes suivant les niveaux")
-isos <- c("1302:2002",
-          "3274:1996",
-          "4287:1997",
-          "4288:1996",
-          "5436-1:2000",
-          "5436-2:2012",
-          "12085:1996",
-          "13565-1:1996",
-          "13565-2:1996",
-          "13565-3:1998")
-urls <- c("obp/ui/#iso:std:iso:1302:ed-4:v1:fr",
-          "fr/standard/1916.html",
-          "fr/standard/10132.html",
-          "fr/standard/2096.html",
-          "fr/standard/21978.html",
-          "fr/standard/61261.html",
-          "fr/standard/20867.html",
-          "fr/standard/22279.html",
-          "fr/standard/22280.html",
-          "fr/standard/26280.html")
-iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
-df.etatsurface <- data.frame(WP = "WP1", 
-                             ISO = iso.url,
-                             description = description,
-                             stringsAsFactors = F)
-######################################
-base.iso.url <- "https://www.iso.org/fr/"
-description <- c("Cuivre et alliages de cuivre",
-                 "Analyses isotopiques",
-                 "Spectroscopie Raman",
-                 "Spectroscopie des rayon X")
-isos <- c("ISO/TC 26",
-          "17034:2016",
-          "10810:2019",
-          "10810:2019"
-)
-urls <- c("committee/47228.html",
-          "standard/29357.html",
-          "standard/74286.html",
-          "standard/74286.html"
-)
-iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
-df.physicochimiques <- data.frame(WP = "WP1", 
-                                  ISO = iso.url,
-                                  description = description,
-                                  stringsAsFactors = F)
-############################
-base.iso.url <- "https://www.iso.org/fr/"
-description <- c("Gestion de la documentation 3D (Lasergrammétrie, RTI)")
-isos <- c("14739-1:2014l")
-urls <- c("standard/54948.html")
-iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
-df.imaging <- data.frame(WP = "WP2",
-                         ISO = iso.url,
-                         description = description,
-                         stringsAsFactors = F)
-##############################
-base.iso.url <- "https://www.iso.org/fr/"
-description <- c("Modélisation mathématique",
-                 "Information géographique")
-urls <- c("standard/64973.html",
-          "standard/26020.html")
-isos <- c("80000-2:2019",
-          "19115:2003")
-iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
-df.mathspat <- data.frame(WP = "WP3",
-                          ISO = iso.url,
-                          description = description,
-                          stringsAsFactors = F)
-
-##############################
-
-
-
-df.isos.all <- rbind(df.etatsurface, df.physicochimiques, df.imaging, df.mathspat)
-kable(df.isos.all,"html",
+# base.iso.url <- "https://www.iso.org/"
+# description <- c("Production d'une documentation technique",
+#                  "Caractéristiques nominales des instruments à contact (palpeur)",
+#                  "Terminologie, description et paramètres",
+#                  "Règles et procédures de mesures",
+#                  "Étalonnage matériel et logiciel",
+#                  "Étalonnage matériel et logiciel",
+#                  "Étalonnage motifs",
+#                  "Étalonnage des ICs, surfaces ayant des propriétés fonctionnelles différentes suivant les niveaux",
+#                  "Étalonnage des ICs, surfaces ayant des propriétés fonctionnelles différentes suivant les niveaux",
+#                  "Étalonnage des ICs, surfaces ayant des propriétés fonctionnelles différentes suivant les niveaux")
+# isos <- c("1302:2002",
+#           "3274:1996",
+#           "4287:1997",
+#           "4288:1996",
+#           "5436-1:2000",
+#           "5436-2:2012",
+#           "12085:1996",
+#           "13565-1:1996",
+#           "13565-2:1996",
+#           "13565-3:1998")
+# urls <- c("obp/ui/#iso:std:iso:1302:ed-4:v1:fr",
+#           "fr/standard/1916.html",
+#           "fr/standard/10132.html",
+#           "fr/standard/2096.html",
+#           "fr/standard/21978.html",
+#           "fr/standard/61261.html",
+#           "fr/standard/20867.html",
+#           "fr/standard/22279.html",
+#           "fr/standard/22280.html",
+#           "fr/standard/26280.html")
+# iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
+# df.etatsurface <- data.frame(WP = "WP1", 
+#                              ISO = iso.url,
+#                              description = description,
+#                              stringsAsFactors = F)
+# ######################################
+# base.iso.url <- "https://www.iso.org/fr/"
+# description <- c("Cuivre et alliages de cuivre",
+#                  "Analyses isotopiques",
+#                  "Spectroscopie Raman",
+#                  "Spectroscopie des rayon X")
+# isos <- c("ISO/TC 26",
+#           "17034:2016",
+#           "10810:2019",
+#           "10810:2019"
+# )
+# urls <- c("committee/47228.html",
+#           "standard/29357.html",
+#           "standard/74286.html",
+#           "standard/74286.html"
+# )
+# iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
+# df.physicochimiques <- data.frame(WP = "WP1", 
+#                                   ISO = iso.url,
+#                                   description = description,
+#                                   stringsAsFactors = F)
+# ############################
+# base.iso.url <- "https://www.iso.org/fr/"
+# description <- c("Gestion de la documentation 3D (Lasergrammétrie, RTI)")
+# isos <- c("14739-1:2014l")
+# urls <- c("standard/54948.html")
+# iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
+# df.imaging <- data.frame(WP = "WP2",
+#                          ISO = iso.url,
+#                          description = description,
+#                          stringsAsFactors = F)
+# ##############################
+# base.iso.url <- "https://www.iso.org/fr/"
+# description <- c("Modélisation mathématique",
+#                  "Information géographique")
+# urls <- c("standard/64973.html",
+#           "standard/26020.html")
+# isos <- c("80000-2:2019",
+#           "19115:2003")
+# iso.url <- paste0("[",isos,"](",base.iso.url,urls,")")
+# df.mathspat <- data.frame(WP = "WP3",
+#                           ISO = iso.url,
+#                           description = description,
+#                           stringsAsFactors = F)
+# 
+# ##############################
+# 
+# 
+# 
+# df.isos.all <- rbind(df.etatsurface, df.physicochimiques, df.imaging, df.mathspat)
+# write.table(df.isos.all, "isos_resume.tsv", sep = "\t", row.names = F)
+# url.isos.res <- paste0('C:/Users/supernova/Dropbox/My PC (supernova-pc)/Documents/itineris/data/isos_resume.tsv')
+# cat(readLines("C:/Users/supernova/Dropbox/My PC (supernova-pc)/Documents/itineris/data/isos_resume.tsv"), sep = "\n")
+# read.table("C:/Users/supernova/Dropbox/My PC (supernova-pc)/Documents/itineris/data/isos_resume.tsv", header = TRUE, fill = TRUE)
+isos.res <- read.table(url.isos.res, header = T, sep = "\t", row.names = NULL)
+kable(isos.res,"html",
       row.names = F,
-      caption = "Iso-standards (ISO) qui seront utilisés dans les différents *work packages* (WP)") %>%
+      caption = "Iso-standards ou standards (ISO) utilisés") %>%
   collapse_rows() %>%
   kable_styling(full_width = FALSE,
                 position = "center",
                 font_size=12)
 ```
 
-Si la nature des données historico-culturelles (sites archéologiques, contextes stratigraphiques, types des objets, etc.) le permet, celles-ci seront alignées avec les champs et les valeurs du *Cultural Heritage Information-Conceptual Reference Model* (CIDOC-CRM), un iso-standard ([21127:2006](https://www.iso.org/standard/34424.html)) pour la description et l’organisation de l’information liée au patrimoine archéologique et architectural. Dans l'autre cas, le projet ITINERIS produira un thésaurus qui sera [FAIRisé](#openscience).
+#### Convention de nommage {#wp3.step.describ.name}
+
+*`r stri_rand_lipsum(1)`*
+
+#### Sérialisation {#wp3.step.describ.serial}
+
+*`r stri_rand_lipsum(1)`*
 
 ### Stockage {#wp3.step.stock}
 
-Le stockage des données se fera sur une base de données FileMaker (WP3 T.5A) consultable en ligne via un navigateur web (technologie WebDirect). Elle sera  hébergée sur les serveurs d’Huma-Num et référencée sur la grille Huma-Num. La Huma-Num héberge déjà de nombreux projets numériques développés par le laboratoire AOROC. Cette structure de données va permettre l'implémentation d'une saisie mult-utilisateurs, la pérennité du stockage et faciliter l'interfaçage avec des données de recherche déjà implémentées par la coordinatrice du projet (VC), le *gazetteer* [Archeolocalis](https://archeolocalis.chronocarto.eu/?zlang=fr), la base de données [BaseFer](https://basefer.chronocarto.eu/). 
+Le stockage des données se fera sur une base de données FileMaker (**WP3 T.5A**) consultable en ligne via un navigateur web (technologie WebDirect). Elle sera  hébergée sur les serveurs d’Huma-Num et référencée sur la grille Huma-Num. La Huma-Num héberge déjà de nombreux projets numériques développés par le laboratoire AOROC. Cette structure de données va permettre l'implémentation d'une saisie mult-utilisateurs, la pérennité du stockage et faciliter l'interfaçage avec des données de recherche déjà implémentées par la coordinatrice du projet (VC), le *gazetteer* [Archeolocalis](https://archeolocalis.chronocarto.eu/?zlang=fr), la base de données [BaseFer](https://basefer.chronocarto.eu/). 
 
 La base de données, accessible en ligne, sera rendue interopérable avec les langages de programmation R (package  [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html)) et Python ([pyodbc](https://pypi.org/project/pyodbc/)). Pour faciliter l'intéropérabilité des données (*linked open data*, LOD), les données et leur métadonnées seront retranscrites à la volée par des routines informatiques aux selon les formats ouverts et internationaux:
 
@@ -454,7 +511,7 @@ kable(df.imaging,"html",
 
 Pour les besoins de cette page web, les données sont stockées sur GitHub:
 
-<center>[https://github.com/zoometh/itineris/tree/main/LOD](https://github.com/zoometh/itineris/tree/main/LOD)</center>
+<center>[https://github.com/zoometh/itineris/tree/main/data](https://github.com/zoometh/itineris/tree/main/data)</center>
 
 ### Analyses {#wp3.step.anal}
 
@@ -476,8 +533,71 @@ Le projet prévoit de publier:
 
 Ces documents et jeux de données seront seront référencés sur le site web du projet <span style='font-family: monospace;'><b>ITINERIS</b></span>, publiés sur des plateformes en libre accès (e.g. GitLab,  [OpenEdition](https://www.openedition.org/?lang=en)) et associés à des identifiants d'objets numériques (*digital object identifiers*, DOI) prenant en compte leur versionnage (*DOI versioning*) afin de garantir leur [FAIRisation](#openscience).
 
+## Partenaires {#part}
+
+```{r calibrate, fig.height= 14, fig.width= 14, echo=FALSE, fig.align='center', fig.cap="Description des *Work packages* (WP), *task* (T.) et des acteurs institutionnels"}
+network
+```
+
+# Notes
+
+Ce document [R](https://www.r-project.org/) + [Markdown](https://rmarkdown.rstudio.com/), déposé sur [GitHub](https://zoometh.github.io/itineris/), a été produit en open-source. 
+
+# Lexique
+
+## Formats ouverts
+
+
+### *plain text*{#Fplaintext}
+
+Les formats *plain text* .txt, .csv et .tsv sont parmi les plus couramment utilisés pour les données alphanumériques. Le format .wkt est le standard d'écriture des données spatiales et géométriques.
+
+### .geojson{#Fgeojson}
+
+Dérivé de [.json]{#Fjson}, un objet .geojson peut être une géométrie, une entité ou une collection d'entités JavaScript.
+
+### .json{#Fjson}
+
+C'est LE format le plus courant pour écrire les graphes RDF. Le format .json est en train de remplacer [.xml](#Fxml) comme principal format d'échange de données (v. aussi .geojson[#Fgeojson]).
+
+### .ply{#Fply}
+
+C'est le format privilégié pour l'enregistrement des données 3D, notamment pour le Web3D.
+
+### .rdf{#Frdf}
+
+Les triples RDF, ou graphes RDF, forment le standard et langage de base de description du web sémantique et du web de données. Il a été développé et adopté par le W3C pour l'échange des données.
+
+### .shp{#Fshp}
+
+Le format .shp est le standard pour les données vectorielles géoréférencées, utilisé par tous les SIG (v. .wkt[#Fplaintext]))
+
+### .u3d{#Fu3d}
+
+Format des données 3D qui peut être intégré dans un document LaTeX ou Acrobat.
+
+### .x3d{#Fx3d}
+
+Dans sa nouvelle norme HTML5, le consortium Web3D a mis au point une interface JavaScript qui permet de prendre en charge le format .x3d de manière native dans une page Web.
+
+### .xml{#Fxml}
+
+
+## Métadonnées
+
+### EXIF{#MExif}
+
+Ce standard pour la description des métadonnées des photographies numériques est le plus largement utilisé. Il est intéropérable avec le langage R (package [exifr](https://cran.r-project.org/web/packages/exifr/index.html))
+
+### XMP{#MXmp}
+
+Standard pour la description des métadonnées des photographies numériques au format [.xml](#Fxml). Sérialisable ([RDF](#Frdf)/[.xml](#Fxml)), il supporte entièrement le [Dublin Core](https://www.iso.org/standard/71339.html). 
+### INSPIRE{#MInspire}
+
+Norme internationale pour les métadonnées spatiales (ISO [19139:2007](https://www.iso.org/standard/32557.html))
+
+
 # References
 
-<!-- #### Modélisation mathématique et spatiale {#wp3.modeling} -->
 
 
