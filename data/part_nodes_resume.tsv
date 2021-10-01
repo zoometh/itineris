@@ -1,7 +1,7 @@
 "id"	"label"	"color"	"title"	"font.size"	"font.color"	"image"	"shape"	"size"	"group"
-"WP1"	"WP1"	"#ffff00"	"WP1 Archaeometric analysis"	15	"black"	""	"box"	30	"wkp"
-"WP2"	"WP2"	"#e26b0a"	"WP2 Archaeological & Technological analysis"	15	"black"	""	"box"	30	"wkp"
-"WP3"	"WP3"	"#963634"	"WP3 Datamanagement & Modeling"	15	"black"	""	"box"	30	"wkp"
+"WP1"	"WP1"	"#ea5c00"	"WP1 Archaeometric analysis"	15	"black"	""	"box"	30	"wkp"
+"WP2"	"WP2"	"#475c7d"	"WP2 Archaeological & Technological analysis"	15	"black"	""	"box"	30	"wkp"
+"WP3"	"WP3"	"#7e9f15"	"WP3 Datamanagement & Modeling"	15	"black"	""	"box"	30	"wkp"
 "T.2A,ICP-MS analysis"	"T.2A
 ICP-MS analysis"	"#808080"	"Inductively coupled plasma mass spectrometry (ICP-MS)"	15	"black"	""	"text"	8	"tsk"
 "T.2B,Isotopic analysis"	"T.2B
