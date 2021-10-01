@@ -41,6 +41,97 @@
     </style>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -319,7 +410,7 @@ AOROC
 Contact.PGD
 </td>
 <td style="text-align:left;">
-Thomas Huet
+Agnès Tricoche, Thomas Huet
 </td>
 </tr>
 <tr>
@@ -342,10 +433,10 @@ Date
 </table>
 <div id="pgd" class="section level1">
 <h1>Plan de gestion des données</h1>
-<p>Le plan de gestion des données (PGD, <em>data management plan</em>) suivi par l’ANR Itineris est celui recommendé par le <a href="https://www.ouvrirlascience.fr/the-committee-for-open-science/">COmité pour la Science Ouverte (CoSo)</a>. Il est partagé par l’ensemble des <a href="#part">partenaires</a> de l’ANR, s’appuie sur les services d’infrastructuration des données d’<a href="#humanum">Huma-Num</a>, <em>Lorem ipsum dolor sit amet, dignissim dolor fusce lacus. Pellentesque, consectetur sed at volutpat in praesent! Dui ultricies curabitur netus ligula praesent conubia nec eget et faucibus. Aenean sociis montes sagittis nisi auctor, iaculis est dolor inceptos dapibus proin amet ex? Dictum facilisi in massa ultrices nec leo vestibulum mi. Bibendum montes vestibulum justo. Habitant eu finibus porttitor penatibus porttitor, mi fermentum sit dictumst ut magna nisl. Et sed sed, sodales suspendisse ligula in. Mi id, curabitur cras a mauris. Nec rhoncus at augue at.</em></p>
+<p>Le plan de gestion des données (PGD, <em>data management plan</em>) est préparé dans le carde du <a href="#WP3"><em>work package</em> 3 (WP3</a> T.5B) et partagé par l’ensemble des <a href="#part">membres</a> de l’ANR Itineris. Il suit les recommandations du <a href="https://www.ouvrirlascience.fr/the-committee-for-open-science/">COmité pour la Science Ouverte (CoSo)</a> et les principes du FAIR (Facile à retrouver, Accessible, Interopérable, Réutilisable). La gestion des données du projet s’appuie sur les services d’<a href="#humanum">Huma-Num</a>, <em>Lorem ipsum dolor sit amet, ac luctus, proin augue curabitur convallis velit. Hendrerit non eu porta, quis pretium. Ultricies pellentesque est himenaeos quam maximus quis at. Tortor nunc vehicula, at fermentum dapibus accumsan in, gravida. At nec taciti eros blandit adipiscing morbi vestibulum ut eget velit nulla, vulputate. Dictum ac vestibulum sed ut, nec ac ut ante, at faucibus. Sodales libero ullamcorper tellus blandit nunc. Placerat orci parturient fermentum quis in purus a hac dapibus. Purus leo tristique accumsan non ac nunc vitae. Leo consequat tincidunt enim amet nostra. Vitae ut cum tellus eros ut. Ut nibh in a magna facilisi dictumst nunc id nullam elementum. Nulla quam neque magna non ac in urna in ac duis fringilla quam.</em></p>
 <div class="figure" style="text-align: center">
-<div id="htmlwidget-460a5bce7910d89cb2f8" style="width:600px;height:600px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-460a5bce7910d89cb2f8">{"x":{"nodes":{"id":["Collecte et\nRéutilisation","Description","Stockage","Analyses","Archivage","Publication"],"label":["Collecte et\nRéutilisation","Description","Stockage","Analyses","Archivage","Publication"],"color":["#808080","#808080","#808080","#808080","#808080","#808080"],"title":["<a href='#wp3.step.collec'>Collecte et\nRéutilisation<\/a>","<a href='#wp3.step.describ'>Description<\/a>","<a href='#wp3.bdweb'>Stockage<\/a>","<a href='#wp3.step.anal'>Analyses<\/a>","<a href='#wp3.step.archiv'>Archivage<\/a>","<a href='#wp3.step.public'>Publication<\/a>"],"font.size":[15,15,15,15,15,15],"font.color":["black","black","black","black","black","black"],"image":["https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_create.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_tag.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_store.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_process.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_archive.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_publish.png"],"shape":["image","image","image","image","image","image"],"size":[24,24,24,24,24,24],"group":["dmp","dmp","dmp","dmp","dmp","dmp"]},"edges":{"from":["Collecte et\nRéutilisation","Description","Stockage","Analyses","Archivage","Publication"],"to":["Description","Stockage","Analyses","Archivage","Publication","Collecte et\nRéutilisation"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}},"color":{"color":"lightblue","highlight":"red"},"smooth":true,"shadow":true}},"groups":["dmp"],"width":"600px","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6244afd0c41213e4ab6d" style="width:600px;height:600px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6244afd0c41213e4ab6d">{"x":{"nodes":{"id":["Collecte et\nRéutilisation","Description","Stockage","Analyses","Archivage","Publication"],"label":["Collecte et\nRéutilisation","Description","Stockage","Analyses","Archivage","Publication"],"color":["#808080","#808080","#808080","#808080","#808080","#808080"],"title":["<a href='#wp3.step.collec'>Collecte et\nRéutilisation<\/a>","<a href='#wp3.step.describ'>Description<\/a>","<a href='#wp3.bdweb'>Stockage<\/a>","<a href='#wp3.step.anal'>Analyses<\/a>","<a href='#wp3.step.archiv'>Archivage<\/a>","<a href='#wp3.step.public'>Publication<\/a>"],"font.size":[15,15,15,15,15,15],"font.color":["black","black","black","black","black","black"],"image":["https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_create.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_tag.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_store.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_process.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_archive.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/data_publish.png"],"shape":["image","image","image","image","image","image"],"size":[24,24,24,24,24,24],"group":["dmp","dmp","dmp","dmp","dmp","dmp"]},"edges":{"from":["Collecte et\nRéutilisation","Description","Stockage","Analyses","Archivage","Publication"],"to":["Description","Stockage","Analyses","Archivage","Publication","Collecte et\nRéutilisation"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}},"color":{"color":"lightblue","highlight":"red"},"smooth":true,"shadow":true}},"groups":["dmp"],"width":"600px","height":"600px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Plan de gestion des données du projet Itineris
 </p>
@@ -355,19 +446,27 @@ Plan de gestion des données du projet Itineris
 <p>L’étude portera sur quelques <span style="color:darkgrey">1200</span> objets en alliage de cuivre provenant de <span style="color:darkgrey">6</span> sites archéologiques. Parallèlement, une révision des corpus déjà publiés sera opérée.</p>
 <div id="provenance" class="section level3">
 <h3>Provenance</h3>
-<p><em>Lorem ipsum dolor sit amet, cursus nibh donec ligula eu turpis. Mauris ac tempor quis, enim, rhoncus magnis molestie magna, non pretium. Donec nisi vestibulum et at fringilla non non tortor. Ante ac ante vel gravida elit arcu sed ligula est porta metus. Sociosqu, gravida aenean eros ut placerat dictum dictum ac. Gravida praesent ut cubilia sed ut eget, per enim quam ut integer. Nascetur mauris mauris in, odio dolor pulvinar. Donec lorem ultrices quisque lacinia gravida morbi. Fames non mollis himenaeos dis, faucibus, curae felis. Integer suspendisse, sit donec sodales nulla hac sed nostra ligula. Ac sapien conubia et netus, curae, vulputate pellentesque, vel platea rhoncus egestas, at. Nibh vel vel conubia augue non. Cursus risus porttitor, quisque vehicula tincidunt id in.</em></p>
+<p><em>Lorem ipsum dolor sit amet, dis ut ac massa dictum pellentesque, placerat risus condimentum litora. Diam curae est quis tellus maximus aliquam. Ullamcorper vitae tincidunt ac, at ut ligula fusce ligula sit. Fames nulla nec condimentum risus sed quisque sit, id. Nibh in ac himenaeos tincidunt natoque non quisque in, diam sollicitudin. Mauris ac tincidunt! Ullamcorper inceptos pellentesque habitasse sed. Varius, ante ac lacinia duis nisl laoreet egestas rhoncus in lorem habitasse augue fringilla. Natoque in nunc curabitur, ac leo elementum mi cum tortor. Praesent ligula bibendum cubilia cum ut sed gravida egestas nullam platea etiam. Facilisis tincidunt ac augue non. Porttitor class per tellus semper ac ullamcorper ultricies dignissim. Diam sed sem dictumst in hac fames sed. Enim netus, imperdiet, etiam accumsan curabitur nam conubia vitae arcu.</em></p>
 </div>
 <div id="données-réutilisées" class="section level3">
 <h3>Données réutilisées</h3>
-<p><em>Lorem ipsum dolor sit amet, montes at ad scelerisque justo. Vestibulum elementum purus pharetra nec, maecenas sed nec, ullamcorper a, sagittis ipsum. Justo ligula eget scelerisque! Rutrum, bibendum eleifend. Sagittis nulla sed, euismod nisi turpis et interdum. Sit, enim urna id lectus massa integer. Amet felis sed hendrerit tincidunt maximus consectetur. Eget montes eros senectus. Pharetra sed sed. Dui et hendrerit lacus, amet velit iaculis! Pulvinar quam porta id maximus et elit blandit elit ut. Et, ligula sed vivamus eros donec et proin dolor. Est ligula bibendum maximus curabitur. Ullamcorper lacus duis semper pellentesque est tempus. Ac, suspendisse. Arcu elementum sagittis amet accumsan ut ut eget.</em></p>
+<p><em>Lorem ipsum dolor sit amet, in consectetur cubilia faucibus maximus, vestibulum nunc vestibulum nunc. Faucibus bibendum felis orci, imperdiet morbi, malesuada eu. Facilisis, egestas nam, condimentum nec eu. Nulla nec tortor, mi litora est quam, mauris pretium aliquam ac. Ut in vitae egestas vestibulum et litora, amet? Pellentesque massa dis dolor malesuada sapien. Dignissim, luctus, facilisis ac sed primis volutpat, risus. Inceptos sit erat lectus, fringilla eros tempus curae accumsan lorem purus. Volutpat risus malesuada malesuada pulvinar dictum nibh malesuada. Pellentesque accumsan consequat commodo mus odio mauris ut primis porttitor amet. Integer felis vel, aliquam, maximus maximus dolor netus purus amet.</em></p>
 </div>
 <div id="données-inédites" class="section level3">
 <h3>Données inédites</h3>
-<p><em>Lorem ipsum dolor sit amet, ut in elit inceptos ante pellentesque fusce felis metus et iaculis. Curabitur nisi, quam tempor accumsan aenean suscipit aliquam eu hac nisi, lorem inceptos ut ex dolor. Vel facilisi nibh, praesent ut, ac phasellus bibendum urna magnis. Finibus quis consectetur vivamus et duis eu vivamus maximus. Leo, tortor tincidunt, luctus at. Ac ornare cras eget est in tortor convallis non. Imperdiet sed. Nascetur mauris erat viverra faucibus risus. Libero sapien iaculis arcu magna, fringilla lorem netus lacinia mauris. Etiam sed porta ipsum magna justo.</em></p>
+<p><em>Lorem ipsum dolor sit amet, pellentesque cursus habitant faucibus volutpat sodales duis suspendisse velit sed. In nisl tempus mi, condimentum torquent hendrerit. Class et diam, potenti in nisl, praesent blandit senectus mauris, nec ex sed. In vitae urna odio fermentum convallis lectus consequat eu, vivamus a. Inceptos litora orci faucibus cursus, litora. Eros purus ultricies consequat. Sed mus sed at, sit montes eros fringilla non dictum, blandit. Pharetra maecenas a, et est. Dignissim vehicula sapien at cum in. Lacus ornare vestibulum erat convallis donec sed vitae dignissim tortor sociosqu. Vitae amet donec ullamcorper. Praesent faucibus aliquet mauris in nostra ullamcorper efficitur sed, non.</em></p>
 </div>
 <div id="volumes" class="section level3">
 <h3>Volumes</h3>
-<p><em>Lorem ipsum dolor sit amet, rhoncus auctor montes facilisis dictum amet cursus ipsum. Magnis fringilla nulla elit fermentum aliquet sed in ut, sed ante. Ridiculus sed, euismod, sem aliquam! Sociis hendrerit, inceptos ligula sociosqu vestibulum, malesuada tempus, curabitur magna quis, sed phasellus a. Donec tellus mus lobortis, mi ex praesent donec massa fusce. Ac nisl molestie eget a. Curae nec sed, tempor et efficitur. Sed hac massa vestibulum, magna non nulla et? Et consequat tellus lacinia laoreet augue vivamus et libero litora donec. Tempor morbi sed adipiscing, vulputate at tortor, nunc arcu morbi. Ut sed ligula sed sed porttitor. Ridiculus turpis purus at dolor. Egestas et ut tincidunt, eu phasellus purus non. Ac, sit, ligula in dictumst, maecenas nulla.</em></p>
+<p><em>Lorem ipsum dolor sit amet, ac a duis fames ut pretium in a ultrices. Vitae dictum justo mi eu lacinia aliquet mi, nunc. Convallis aliquam sapien quis tempus rutrum bibendum. Cursus pellentesque, sit vel per ac vivamus. Felis mauris et pretium, aenean nisl. Tortor sed a pharetra dapibus amet lorem platea congue lectus? Nibh cras vestibulum sit. Et maecenas non dignissim eleifend sed, ac scelerisque parturient. Eu, pellentesque.</em></p>
+</div>
+<div id="contrôle-de-la-qualité" class="section level3">
+<h3>Contrôle de la qualité</h3>
+<p><em>Lorem ipsum dolor sit amet, lobortis tellus curae ante suscipit tristique ullamcorper. Mauris maximus eu varius ipsum ac luctus nec, mauris. Nec aliquam at maximus eget hac ut. Non, tincidunt, sed torquent non nibh, integer ut, malesuada pretium. Ut tellus phasellus augue donec pellentesque sed urna viverra quis dis porttitor. Sit pharetra dictum, tempus sollicitudin diam rhoncus sed ligula ac arcu urna sed. Himenaeos accumsan vivamus primis tristique in massa. Facilisi, mollis suspendisse libero. Feugiat pellentesque sed feugiat ligula, non, ipsum leo vehicula.</em></p>
+</div>
+<div id="propriété-intellectuelle" class="section level3">
+<h3>Propriété intellectuelle</h3>
+<p><em>Lorem ipsum dolor sit amet, vestibulum ipsum quis eu non blandit nec. Porta ac at dolor, morbi id. Varius euismod lobortis sed dapibus ante phasellus. Pellentesque et torquent imperdiet commodo netus. Hac vitae eu in lacinia. Leo tellus maximus vel volutpat non ullamcorper phasellus duis. Eget montes tempus vestibulum eget, mi augue hendrerit sem ligula ut. Ac metus porta ut eget arcu. Sed, justo vestibulum nisl eu fusce egestas eu, lacinia. Ipsum et a, a non, facilisis. Eu eu habitant vestibulum felis ornare, etiam porttitor per. Arcu gravida tortor phasellus erat ut ac ut non ut vehicula aptent. Donec nunc sollicitudin felis libero non turpis mi fringilla. Sollicitudin faucibus bibendum diam tellus proin ut integer parturient cras vivamus consequat at placerat. Mus nullam, non nunc dis vehicula id nibh leo risus.</em></p>
 </div>
 </div>
 <div id="wp3.step.describ" class="section level2">
@@ -582,14 +681,254 @@ Dublin Core, part 2, Information et documentation
 </tr>
 </tbody>
 </table>
+<p>Les données seront étudiées par des équipes françaises et italiennes. Par ailleurs, l’intéropérabilité des données requiert l’usage de l’anglais. Pour faciliciter les échanges, une table de correspondance entre ces trois langue va être mise en place et alimentée par les différentes équipes comme par exemple, <a href="https://github.com/zoometh/itineris/blob/main/fra-ita-eng/lexicon.xlsx?raw=true">ce fichier XLSX</a> déposé sur le <a href="https://github.com/zoometh/itineris/tree/main/fra-ita-eng">GitHub du projet Itineris</a>, et lu ici à la volée par R</p>
+<table class="table" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Table de correspondance lingistique des termes
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+FRA
+</th>
+<th style="text-align:left;">
+ITA
+</th>
+<th style="text-align:left;">
+ENG
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ITI
+</td>
+<td style="text-align:left;">
+ITI
+</td>
+<td style="text-align:left;">
+ITI
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Numero Labo
+</td>
+<td style="text-align:left;">
+Sigla
+</td>
+<td style="text-align:left;">
+NumLab
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Description
+</td>
+<td style="text-align:left;">
+Descrizione
+</td>
+<td style="text-align:left;">
+Description
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Provenance
+</td>
+<td style="text-align:left;">
+Provenienza
+</td>
+<td style="text-align:left;">
+Source
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cu
+</td>
+<td style="text-align:left;">
+Cu
+</td>
+<td style="text-align:left;">
+Cu
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sn
+</td>
+<td style="text-align:left;">
+Sn
+</td>
+<td style="text-align:left;">
+Sn
+</td>
+</tr>
+</tbody>
+</table>
+<div id="structuration" class="section level3">
+<h3>Structuration</h3>
+<p>Contrairement aux descripteurs et aux formats que nous cherchons à faire converger sur des iso-standards et des formats libres, le choix de la structuration des données (eg. tableurs Excel, hiérarchie des dossiers, etc.) sera laissé au choix des spécialistes afin qu’ils s’économisent du temps en utilisant des méthodes qu’ils maitrisent déjà. L’insertion de ces données en base de données FileMaker se fera par un ensemble de procédures en R ou Python permettant de faire le <em>mappage</em> à la volée de ces données</p>
+</div>
 <div id="wp3.step.describ.name" class="section level3">
 <h3>Convention de nommage</h3>
-<p><em>Lorem ipsum dolor sit amet, ac taciti cum ornare gravida porttitor elit in at nec consectetur mus quis interdum. Urna platea quis ridiculus rhoncus hendrerit. Eros dictumst ante primis vitae cursus consequat aptent. Vulputate magnis, accumsan suscipit vel vehicula efficitur aenean. Nullam etiam penatibus sed sed mauris, aliquam habitasse sapien et quam. Porttitor faucibus lobortis eget mi curae. Primis at nibh tellus vel tortor efficitur, taciti porttitor finibus sociis enim ut nec eleifend. Sapien donec vel massa, pharetra et penatibus nulla pharetra elementum ac ligula sed. Sit felis dis ornare vitae vestibulum, purus vel venenatis dignissim tellus blandit nulla. Curabitur donec nisl netus neque ridiculus, vulputate sed. Fusce sed, ac et praesent. Sem eu nec vestibulum cum bibendum dignissim facilisis risus id in felis sit non.</em></p>
+<p>L’ANR Itineris adopte une démarche orientée objet en adoptant un identifiant unique pour chaque objet. Cet identifiant qui sera étudié sous la forme: <span style="color:blue">code ANR</span> (3 <em>digits</em>), <span style="color:red">numéro d’objet</span> (5 <em>digits</em>). Par exemple, l’objet 1 sera identifié par:</p>
+<center>
+<p><span style="color:blue">ITI</span><span style="color:red">00001</span></p>
+</center>
+<p>C’est cet identifiant qui permettra de mettre en lien l’ensemble des analyses effectuées (typologiques, élémentaires, etc.).</p>
+</div>
+<div id="métadonnées-objets" class="section level3">
+<h3>Métadonnées objets</h3>
+<p>A chacun des objets seront associées ces métadonnées:</p>
+<table class="table" style="font-size: 12px; width: auto !important; ">
+<caption style="font-size: initial !important;">
+Métadonnées attachées aux objets
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Dublin.Core.element
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Exemple
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Title
+</td>
+<td style="text-align:left;">
+Référence Itineris
+</td>
+<td style="text-align:left;">
+ITI00001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Creator
+</td>
+<td style="text-align:left;">
+Créateur du contenu du fichier
+</td>
+<td style="text-align:left;">
+Dupond Albert, Dupuis Jeanne
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Subject
+</td>
+<td style="text-align:left;">
+Thème du contenu du fichier
+</td>
+<td style="text-align:left;">
+Analyses physico-chimiques, 3D
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Publisher
+</td>
+<td style="text-align:left;">
+Entité responsable de la mise à disposition ou diffusion du fichier (personne, organisation ou service)
+</td>
+<td style="text-align:left;">
+AOROC, Universita degli Studi di Torino
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Contributor
+</td>
+<td style="text-align:left;">
+Entité responsable de contributions au contenu du fichier (personne, organisation ou service)
+</td>
+<td style="text-align:left;">
+AOROC, Veronica Cicolani
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Date
+</td>
+<td style="text-align:left;">
+Date de la version définitive (date de création du fichier dans sa version partagée)
+</td>
+<td style="text-align:left;">
+AAAA/MM/JJ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Type
+</td>
+<td style="text-align:left;">
+Nature ou genre du contenu du fichier
+</td>
+<td style="text-align:left;">
+<ol start="22" style="list-style-type: lower-alpha">
+<li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/">Type dans le Dublin Core</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Format
+</td>
+<td style="text-align:left;">
+Matérialisation du fichier (type de medium, dimensions, supports informatiques)
+</td>
+<td style="text-align:left;">
+Format du fichier, type MIME (si disponible)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Identifier
+</td>
+<td style="text-align:left;">
+Référence univoque au fichier
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+Digital Object Identifier (DOI)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Source
+</td>
+<td style="text-align:left;">
+Référence à une ressource dont le fichier décrit est dérivé
+</td></li>
+</ol>
+</tr>
+<tr>
+<td style="text-align:left;">
+Language
+</td>
+<td style="text-align:left;">
+Langue du contenu intellectuel du fichier
+</td>
+<td style="text-align:left;">
+Code langage
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Lorem ipsum dolor sit amet, lorem egestas porttitor sem mauris platea pretium mauris, enim. Quam habitasse ad vulputate, ante cursus ligula efficitur dui sit, primis. Purus, vulputate nibh massa sem curae, ut ante in vitae fames nunc nec. Magna natoque ut ut amet. Turpis erat diam hac per inceptos et diam sed. Augue id sed nulla aliquet ut at consequat consectetur auctor sed. Ligula a ornare amet maecenas dolor facilisis velit. In class purus, magnis sed. In, duis diam pharetra maximus dapibus per conubia etiam inceptos. Suscipit metus non maecenas facilisi et id etiam dictumst.</em></p>
 </div>
 </div>
 <div id="wp3.step.stock" class="section level2">
 <h2>Stockage</h2>
-<p>Le stockage des données se fera sur une base de données FileMaker (<strong>WP3 T.5A</strong>) consultable en ligne via un navigateur web (technologie WebDirect). Elle sera hébergée sur les serveurs d’Huma-Num et référencée sur la grille Huma-Num. La Huma-Num héberge déjà de nombreux projets numériques développés par le laboratoire AOROC. Cette structure de données va permettre l’implémentation d’une saisie mult-utilisateurs, la pérennité du stockage et faciliter l’interfaçage avec des données de recherche déjà implémentées par la coordinatrice du projet (VC), le <em>gazetteer</em> <a href="https://archeolocalis.chronocarto.eu/?zlang=fr">Archeolocalis</a>, la base de données <a href="https://basefer.chronocarto.eu/">BaseFer</a>.</p>
+<p>Le stockage des données se fera sur une base de données FileMaker <a href="#WP3">WP3</a> T.5A consultable en ligne via un navigateur web (technologie WebDirect). Elle sera hébergée sur les serveurs d’Huma-Num et référencée sur la grille Huma-Num. La Huma-Num héberge déjà de nombreux projets numériques développés par le laboratoire AOROC. Cette structure de données va permettre l’implémentation d’une saisie mult-utilisateurs, la pérennité du stockage et faciliter l’interfaçage avec des données de recherche déjà implémentées par la coordinatrice du projet (VC), le <em>gazetteer</em> <a href="https://archeolocalis.chronocarto.eu/?zlang=fr">Archeolocalis</a>, la base de données <a href="https://basefer.chronocarto.eu/">BaseFer</a>.</p>
 </div>
 <div id="wp3.step.anal" class="section level2">
 <h2>Analyses</h2>
@@ -618,6 +957,42 @@ output
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="3">
+WP*
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="3">
+T6
+</td>
+<td style="text-align:left;">
+GitHub account to converge actions
+</td>
+<td style="text-align:left;">
+Web platform for source code management (versioning, Git, continuous integration, etc.)
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+<a href="#Fplaintext">plain text</a> files, apps, etc.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GitLab account to share apps and tools
+</td>
+<td style="text-align:left;">
+Web platform for software development (versioning, Git, continuous integration, etc.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Website for scholars and large public
+</td>
+<td style="text-align:left;">
+Web Content Management System (eg. WordPress, Omeka-S, Django)
+</td>
+<td style="text-align:left;">
+URL
+</td>
+</tr>
 <tr>
 <td style="text-align:left;vertical-align: middle !important;" rowspan="13">
 <a href="#WP2">WP2</a>
@@ -735,7 +1110,7 @@ PhotoScan Pro and 3DReshaper
 3D photogrammetry and 3D point processing
 </td>
 <td style="text-align:left;">
-<a href="#Fply">.ply</a>, .u3D, <a href="#Fx3d">.x3d</a>
+<a href="#Fply">.ply</a>, <a href="#Fu3d">[.u3d](#Fu3d)</a>, <a href="#Fx3d">.x3d</a>
 </td>
 </tr>
 <tr>
@@ -763,7 +1138,7 @@ Iso-standards
 ISO standards (Institution Organization for Standardization) for data description (eg. ISO 25178, TEI, Dublin Core, CIDOC-CRM, etc.)
 </td>
 <td style="text-align:left;">
-<a href="#Fjson">.json</a>, <a href="#Frdf">.rdf</a>, etc.
+<a href="#Fjson">.json</a>, <a href="#Frdf">RDF</a>, etc.
 </td>
 </tr>
 <tr>
@@ -821,42 +1196,6 @@ Open-access and restricted-access to Data Warehouse (eg. Huma-Num ShareDocs, Git
 URL, DOI (<a href="#Fplaintext">plain text</a> files, apps, etc.)
 </td>
 </tr>
-<tr>
-<td style="text-align:left;vertical-align: middle !important;" rowspan="3">
-WP*
-</td>
-<td style="text-align:left;vertical-align: middle !important;" rowspan="3">
-T6
-</td>
-<td style="text-align:left;">
-GitHub account to converge actions
-</td>
-<td style="text-align:left;">
-Web platform for source code management (versioning, Git, continuous integration, etc.)
-</td>
-<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
-<a href="#Fplaintext">plain text</a> files, apps, etc.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-GitLab account to share apps and tools
-</td>
-<td style="text-align:left;">
-Web platform for software development (versioning, Git, continuous integration, etc.)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Website for scholars and large public
-</td>
-<td style="text-align:left;">
-Web Content Management System (eg. WordPress, Omeka-S, Django)
-</td>
-<td style="text-align:left;">
-URL
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -866,18 +1205,1168 @@ URL
 </div>
 <div id="wp3.step.public" class="section level2">
 <h2>Publication</h2>
-<p>Le projet prévoit de publier:</p>
+<p>Pour complaire aux directives de la Science ouverte et afin de garantir la <a href="www.go-fair.org/fair-principles">FAIRisation</a> des données, le projet Itineris va publier:</p>
 <ul>
-<li>du code informatique sous la forme de fonctions ou de <em>packages</em></li>
-<li>des jeux de données (<em>datasets</em>)</li>
-<li>des documents de travail (<em>working papers</em>) avec du versionnage de DOI</li>
-<li>des documents de données (<em>data papers</em>)</li>
+<li>du code informatique</li>
+<li>des documents de travail</li>
+<li>des documents de données</li>
 <li>des articles scientifiques</li>
+<li>des colloques, <em>workshops</em>, etc.</li>
 </ul>
-<p>Ces documents et jeux de données seront seront référencés sur le site web du projet <span style="font-family: monospace;"><b>Itineris</b></span>, publiés sur des plateformes en libre accès (e.g. GitLab, <a href="https://www.openedition.org/?lang=en">OpenEdition</a>) et associés à des identifiants d’objets numériques (<em>digital object identifiers</em>, DOI) prenant en compte leur versionnage (<em>DOI versioning</em>) afin de garantir leur <a href="www.go-fair.org/fair-principles">FAIRisation</a>.</p>
+<p>Ces documents, jeux de données, articles scientifiques et événements seront seront référencés sur le site web du projet.</p>
+<div id="code-informatique" class="section level3">
+<h3>Code informatique</h3>
+<p>Le code informatique généré par le projet Itineris va être rendu disponible sur les plateformes GitHub et GitLab. Publié préférentiellement sous la forme de fonctions, de <em>packages</em> (R), ou de librairies (Python), ce code sera accompagné d’un de sa documentation (README.md, DESCRIPTION, docs/build/html, etc.).</p>
+</div>
+<div id="documents-de-travail" class="section level3">
+<h3>Documents de travail</h3>
+<p>Des documents de travail (<em>working papers</em>) seront publiés avec des identifiants d’objets numériques (<em>digital object identifiers</em>, DOI) prenant en compte leur versionnage (<em>DOI versioning</em>).</p>
+</div>
+<div id="documents-de-données" class="section level3">
+<h3>Documents de données</h3>
+<p>Des documents de données (<em>data papers</em>) seront publiés sur des plateformes open-source et associés a des DOI.</p>
+</div>
+<div id="articles-scientifiques" class="section level3">
+<h3>Articles scientifiques</h3>
+<p>Des articles scientifiques seront publiés sur des plateformes open-source à comité de lecture (eg., <a href="https://www.openedition.org/?lang=en">OpenEdition</a>), etc., <em>Lorem ipsum dolor sit amet, pellentesque integer odio varius, mauris sapien egestas sit varius. Conubia natoque ipsum porttitor id tellus enim ac eget elit. Mauris bibendum condimentum porttitor mus lacus cursus ut placerat euismod at lacinia in. Ac, facilisi pharetra porta nisl eu purus lacus turpis nullam, urna, lorem augue, tincidunt. Sed mus, in pharetra quam eu sed nibh porta. Mattis rutrum, quis pellentesque pretium rhoncus facilisis ipsum vel. Velit fermentum enim mauris, sed sed sollicitudin porta, mollis, a montes quam ante nisl. Aliquam lorem ac, commodo nisl curabitur hendrerit etiam, porttitor. Odio suspendisse nunc pellentesque nibh in in vestibulum. Habitant primis phasellus quisque eget venenatis. Id mollis, auctor blandit, non. Diam, sed risus feugiat.</em></p>
+</div>
 <div id="wp3.step.describ.serial" class="section level3">
 <h3>Sérialisation</h3>
-<p>La base de données, accessible en ligne, est interopérable avec des procédures R (package <a href="https://cran.r-project.org/web/packages/RODBC/index.html">RODBC</a>) et Python (<a href="https://pypi.org/project/pyodbc/">pyodbc</a>). Ces procédures facilitent l’intéropérabilité des données (<em>linked data</em>, LD) et le traitement de leur métadonnées. Celles-ci seront représentées préféretniellement avec JSON-LD, sous forme de graphes RDF. Les données décrites les données à partir de vocabulaires. L’historique des données sérailisée se fait avec VoID, DCAT ou PROV-O. Les données sérialisées sont trouvable avec SPARQL.</p>
+<p>La sérialisation des données va permettre d’écrire l’information sous forme de graphes <a href="#Frdf">RDF</a>. Nous prenons ici l’exemple de l’étude de la composition élémentaire d’un échantillon de <span style="color:darkgrey">5</span> objets italiens. Les données viennent d’un <a href="https://github.com/zoometh/itineris/blob/main/data/example_1.xlsx?raw=true">fichier XLSX déposé sur GitHub</a> et sont traitées à la volée par R.</p>
+<table class="table" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Analyses élémentaires, exemple 1, données italiennes
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+1
+</th>
+<th style="text-align:left;">
+2
+</th>
+<th style="text-align:left;">
+3
+</th>
+<th style="text-align:left;">
+4
+</th>
+<th style="text-align:left;">
+5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ITI
+</td>
+<td style="text-align:left;">
+ITI00001
+</td>
+<td style="text-align:left;">
+ITI00002
+</td>
+<td style="text-align:left;">
+ITI00003
+</td>
+<td style="text-align:left;">
+ITI00004
+</td>
+<td style="text-align:left;">
+ITI00005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sigla
+</td>
+<td style="text-align:left;">
+VF SP 12 VF M1
+</td>
+<td style="text-align:left;">
+VF E8/1000 VF M5
+</td>
+<td style="text-align:left;">
+CdA Viarengo Cum 56 CdA N2
+</td>
+<td style="text-align:left;">
+CdA Viarengo CdA M1
+</td>
+<td style="text-align:left;">
+CdA Viarengo CdA M3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Descrizione
+</td>
+<td style="text-align:left;">
+Barretta quadrata Lingotto
+</td>
+<td style="text-align:left;">
+Scoria di fusione
+</td>
+<td style="text-align:left;">
+Scoria
+</td>
+<td style="text-align:left;">
+Barretta
+</td>
+<td style="text-align:left;">
+Scorietta
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cu
+</td>
+<td style="text-align:left;">
+589.0000
+</td>
+<td style="text-align:left;">
+773.0000
+</td>
+<td style="text-align:left;">
+903.5887
+</td>
+<td style="text-align:left;">
+881.3882
+</td>
+<td style="text-align:left;">
+832.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sn
+</td>
+<td style="text-align:left;">
+14.810666
+</td>
+<td style="text-align:left;">
+68.143411
+</td>
+<td style="text-align:left;">
+3.551417
+</td>
+<td style="text-align:left;">
+100.842001
+</td>
+<td style="text-align:left;">
+106.959696
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pb
+</td>
+<td style="text-align:left;">
+17.249495
+</td>
+<td style="text-align:left;">
+4.592344
+</td>
+<td style="text-align:left;">
+47.859824
+</td>
+<td style="text-align:left;">
+4.634858
+</td>
+<td style="text-align:left;">
+1.953357
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fe
+</td>
+<td style="text-align:left;">
+7.8073473
+</td>
+<td style="text-align:left;">
+1.7844817
+</td>
+<td style="text-align:left;">
+0.3219372
+</td>
+<td style="text-align:left;">
+10.3320199
+</td>
+<td style="text-align:left;">
+0.2442332
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bi
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+As
+</td>
+<td style="text-align:left;">
+0.22046851
+</td>
+<td style="text-align:left;">
+2.49861137
+</td>
+<td style="text-align:left;">
+0.26905654
+</td>
+<td style="text-align:left;">
+0.84759798
+</td>
+<td style="text-align:left;">
+0.09507971
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sb
+</td>
+<td style="text-align:left;">
+0.61350463
+</td>
+<td style="text-align:left;">
+4.59180538
+</td>
+<td style="text-align:left;">
+0.46794140
+</td>
+<td style="text-align:left;">
+1.22685130
+</td>
+<td style="text-align:left;">
+0.04403151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ni
+</td>
+<td style="text-align:left;">
+4.6882780
+</td>
+<td style="text-align:left;">
+0.9798985
+</td>
+<td style="text-align:left;">
+0.9114950
+</td>
+<td style="text-align:left;">
+1.3563466
+</td>
+<td style="text-align:left;">
+0.1014822
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ag
+</td>
+<td style="text-align:left;">
+0.1628114
+</td>
+<td style="text-align:left;">
+2.5905370
+</td>
+<td style="text-align:left;">
+2.7347158
+</td>
+<td style="text-align:left;">
+0.9716939
+</td>
+<td style="text-align:left;">
+0.1607451
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Al
+</td>
+<td style="text-align:left;">
+7.1772074
+</td>
+<td style="text-align:left;">
+0.7113230
+</td>
+<td style="text-align:left;">
+0.1565768
+</td>
+<td style="text-align:left;">
+1.6685436
+</td>
+<td style="text-align:left;">
+0.1163096
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zn
+</td>
+<td style="text-align:left;">
+3.520000e+02
+</td>
+<td style="text-align:left;">
+1.928637e-01
+</td>
+<td style="text-align:left;">
+5.251450e-02
+</td>
+<td style="text-align:left;">
+6.001133e-01
+</td>
+<td style="text-align:left;">
+4.791013e-03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cr
+</td>
+<td style="text-align:left;">
+0.03593141
+</td>
+<td style="text-align:left;">
+0.00352067
+</td>
+<td style="text-align:left;">
+0.01084494
+</td>
+<td style="text-align:left;">
+0.32840711
+</td>
+<td style="text-align:left;">
+0.02094844
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cd
+</td>
+<td style="text-align:left;">
+0.125918562
+</td>
+<td style="text-align:left;">
+0.097487927
+</td>
+<td style="text-align:left;">
+0.018064707
+</td>
+<td style="text-align:left;">
+0.042246923
+</td>
+<td style="text-align:left;">
+0.009772763
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Co
+</td>
+<td style="text-align:left;">
+0.30287873
+</td>
+<td style="text-align:left;">
+0.21356240
+</td>
+<td style="text-align:left;">
+0.01977933
+</td>
+<td style="text-align:left;">
+0.15504224
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mn
+</td>
+<td style="text-align:left;">
+5.67581901
+</td>
+<td style="text-align:left;">
+0.04564737
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ca
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ba
+</td>
+<td style="text-align:left;">
+0.03323134
+</td>
+<td style="text-align:left;">
+0.03208626
+</td>
+<td style="text-align:left;">
+0.01208102
+</td>
+<td style="text-align:left;">
+0.10676144
+</td>
+<td style="text-align:left;">
+0.01707337
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+K
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mg
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0.2334642
+</td>
+<td style="text-align:left;">
+0.2989581
+</td>
+<td style="text-align:left;">
+0.3609821
+</td>
+<td style="text-align:left;">
+0.3752604
+</td>
+<td style="text-align:left;">
+0.3105041
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S
+</td>
+<td style="text-align:left;">
+0.001000000
+</td>
+<td style="text-align:left;">
+0.064369565
+</td>
+<td style="text-align:left;">
+0.017527067
+</td>
+<td style="text-align:left;">
+0.200291828
+</td>
+<td style="text-align:left;">
+0.001599032
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOT
+</td>
+<td style="text-align:left;">
+1000.1390
+</td>
+<td style="text-align:left;">
+859.8419
+</td>
+<td style="text-align:left;">
+960.3546
+</td>
+<td style="text-align:left;">
+1005.0773
+</td>
+<td style="text-align:left;">
+942.0408
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Provenienza
+</td>
+<td style="text-align:left;">
+villa del foro
+</td>
+<td style="text-align:left;">
+villa del foro
+</td>
+<td style="text-align:left;">
+castello di annone
+</td>
+<td style="text-align:left;">
+castello di annone
+</td>
+<td style="text-align:left;">
+castello di annone
+</td>
+</tr>
+</tbody>
+</table>
+<p>Pour les besoins de la sérialisation, certains noms de champs sont retranscris en anglais en nous servant de la table de correspondances linguistique (voir ).</p>
+<table class="table" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Analyses élémentaires, exemple 1, traduit en anglais
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+1
+</th>
+<th style="text-align:left;">
+2
+</th>
+<th style="text-align:left;">
+3
+</th>
+<th style="text-align:left;">
+4
+</th>
+<th style="text-align:left;">
+5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ITI
+</td>
+<td style="text-align:left;">
+ITI00001
+</td>
+<td style="text-align:left;">
+ITI00002
+</td>
+<td style="text-align:left;">
+ITI00003
+</td>
+<td style="text-align:left;">
+ITI00004
+</td>
+<td style="text-align:left;">
+ITI00005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NumLab
+</td>
+<td style="text-align:left;">
+VF SP 12 VF M1
+</td>
+<td style="text-align:left;">
+VF E8/1000 VF M5
+</td>
+<td style="text-align:left;">
+CdA Viarengo Cum 56 CdA N2
+</td>
+<td style="text-align:left;">
+CdA Viarengo CdA M1
+</td>
+<td style="text-align:left;">
+CdA Viarengo CdA M3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Description
+</td>
+<td style="text-align:left;">
+Barretta quadrata Lingotto
+</td>
+<td style="text-align:left;">
+Scoria di fusione
+</td>
+<td style="text-align:left;">
+Scoria
+</td>
+<td style="text-align:left;">
+Barretta
+</td>
+<td style="text-align:left;">
+Scorietta
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cu
+</td>
+<td style="text-align:left;">
+589.0000
+</td>
+<td style="text-align:left;">
+773.0000
+</td>
+<td style="text-align:left;">
+903.5887
+</td>
+<td style="text-align:left;">
+881.3882
+</td>
+<td style="text-align:left;">
+832.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sn
+</td>
+<td style="text-align:left;">
+14.810666
+</td>
+<td style="text-align:left;">
+68.143411
+</td>
+<td style="text-align:left;">
+3.551417
+</td>
+<td style="text-align:left;">
+100.842001
+</td>
+<td style="text-align:left;">
+106.959696
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pb
+</td>
+<td style="text-align:left;">
+17.249495
+</td>
+<td style="text-align:left;">
+4.592344
+</td>
+<td style="text-align:left;">
+47.859824
+</td>
+<td style="text-align:left;">
+4.634858
+</td>
+<td style="text-align:left;">
+1.953357
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fe
+</td>
+<td style="text-align:left;">
+7.8073473
+</td>
+<td style="text-align:left;">
+1.7844817
+</td>
+<td style="text-align:left;">
+0.3219372
+</td>
+<td style="text-align:left;">
+10.3320199
+</td>
+<td style="text-align:left;">
+0.2442332
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bi
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+<td style="text-align:left;">
+0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+As
+</td>
+<td style="text-align:left;">
+0.22046851
+</td>
+<td style="text-align:left;">
+2.49861137
+</td>
+<td style="text-align:left;">
+0.26905654
+</td>
+<td style="text-align:left;">
+0.84759798
+</td>
+<td style="text-align:left;">
+0.09507971
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sb
+</td>
+<td style="text-align:left;">
+0.61350463
+</td>
+<td style="text-align:left;">
+4.59180538
+</td>
+<td style="text-align:left;">
+0.46794140
+</td>
+<td style="text-align:left;">
+1.22685130
+</td>
+<td style="text-align:left;">
+0.04403151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ni
+</td>
+<td style="text-align:left;">
+4.6882780
+</td>
+<td style="text-align:left;">
+0.9798985
+</td>
+<td style="text-align:left;">
+0.9114950
+</td>
+<td style="text-align:left;">
+1.3563466
+</td>
+<td style="text-align:left;">
+0.1014822
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ag
+</td>
+<td style="text-align:left;">
+0.1628114
+</td>
+<td style="text-align:left;">
+2.5905370
+</td>
+<td style="text-align:left;">
+2.7347158
+</td>
+<td style="text-align:left;">
+0.9716939
+</td>
+<td style="text-align:left;">
+0.1607451
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Al
+</td>
+<td style="text-align:left;">
+7.1772074
+</td>
+<td style="text-align:left;">
+0.7113230
+</td>
+<td style="text-align:left;">
+0.1565768
+</td>
+<td style="text-align:left;">
+1.6685436
+</td>
+<td style="text-align:left;">
+0.1163096
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zn
+</td>
+<td style="text-align:left;">
+3.520000e+02
+</td>
+<td style="text-align:left;">
+1.928637e-01
+</td>
+<td style="text-align:left;">
+5.251450e-02
+</td>
+<td style="text-align:left;">
+6.001133e-01
+</td>
+<td style="text-align:left;">
+4.791013e-03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cr
+</td>
+<td style="text-align:left;">
+0.03593141
+</td>
+<td style="text-align:left;">
+0.00352067
+</td>
+<td style="text-align:left;">
+0.01084494
+</td>
+<td style="text-align:left;">
+0.32840711
+</td>
+<td style="text-align:left;">
+0.02094844
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cd
+</td>
+<td style="text-align:left;">
+0.125918562
+</td>
+<td style="text-align:left;">
+0.097487927
+</td>
+<td style="text-align:left;">
+0.018064707
+</td>
+<td style="text-align:left;">
+0.042246923
+</td>
+<td style="text-align:left;">
+0.009772763
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Co
+</td>
+<td style="text-align:left;">
+0.30287873
+</td>
+<td style="text-align:left;">
+0.21356240
+</td>
+<td style="text-align:left;">
+0.01977933
+</td>
+<td style="text-align:left;">
+0.15504224
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mn
+</td>
+<td style="text-align:left;">
+5.67581901
+</td>
+<td style="text-align:left;">
+0.04564737
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+<td style="text-align:left;">
+0.00010000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ca
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ba
+</td>
+<td style="text-align:left;">
+0.03323134
+</td>
+<td style="text-align:left;">
+0.03208626
+</td>
+<td style="text-align:left;">
+0.01208102
+</td>
+<td style="text-align:left;">
+0.10676144
+</td>
+<td style="text-align:left;">
+0.01707337
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+K
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mg
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+0.2334642
+</td>
+<td style="text-align:left;">
+0.2989581
+</td>
+<td style="text-align:left;">
+0.3609821
+</td>
+<td style="text-align:left;">
+0.3752604
+</td>
+<td style="text-align:left;">
+0.3105041
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S
+</td>
+<td style="text-align:left;">
+0.001000000
+</td>
+<td style="text-align:left;">
+0.064369565
+</td>
+<td style="text-align:left;">
+0.017527067
+</td>
+<td style="text-align:left;">
+0.200291828
+</td>
+<td style="text-align:left;">
+0.001599032
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOT
+</td>
+<td style="text-align:left;">
+1000.1390
+</td>
+<td style="text-align:left;">
+859.8419
+</td>
+<td style="text-align:left;">
+960.3546
+</td>
+<td style="text-align:left;">
+1005.0773
+</td>
+<td style="text-align:left;">
+942.0408
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Source
+</td>
+<td style="text-align:left;">
+villa del foro
+</td>
+<td style="text-align:left;">
+villa del foro
+</td>
+<td style="text-align:left;">
+castello di annone
+</td>
+<td style="text-align:left;">
+castello di annone
+</td>
+<td style="text-align:left;">
+castello di annone
+</td>
+</tr>
+</tbody>
+</table>
+<p>Le langage de programmation R offre différents <em>packages</em> (<a href="https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html">rdflib</a>, <a href="https://cran.r-project.org/web/packages/jsonld/index.html">jsonld</a>, etc.) permettant de formater les données de l’étude sous la forme de <em>linked open data</em> (LOD), plus exactement sous la forme de triples RDF. Ici sur le même exemple, nous nous intéressont aux teneur en cuivre des objets et à leur provenance</p>
+<p>Où:</p>
+<ul>
+<li><strong>Source</strong> = sujet, le site de provenance</li>
+<li><strong>Cu</strong> = prédicat, la composition en cuivre</li>
+<li><strong>NumLab</strong> = objet, le nom de l’objet</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/zoometh/itineris/tree/main/&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rdf.label <span class="ot">&lt;-</span> <span class="st">&quot;NumLab&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rdf.type <span class="ot">&lt;-</span> <span class="st">&quot;Cu&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rdf.about <span class="ot">&lt;-</span> <span class="st">&quot;Source&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>rdf <span class="ot">&lt;-</span> <span class="fu">rdf</span>()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(example1.ENG)){</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  rdf <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rdf_add</span>(<span class="at">subject =</span> <span class="fu">paste0</span>(base, example1.ENG[i, rdf.about]), </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">predicate =</span> <span class="fu">paste0</span>(base, example1.ENG[i, rdf.type]), </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">object =</span> example1.ENG[i, rdf.label]) </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>rdf</span></code></pre></div>
+<pre><code>## Total of 5 triples, stored in hashes
+## -------------------------------
+## &lt;https://github.com/zoometh/itineris/tree/main/villa del foro&gt; &lt;https://github.com/zoometh/itineris/tree/main/589&gt; &quot;VF SP 12 VF M1&quot; .
+## &lt;https://github.com/zoometh/itineris/tree/main/castello di annone&gt; &lt;https://github.com/zoometh/itineris/tree/main/903.588728461539&gt; &quot;CdA Viarengo Cum 56 CdA N2&quot; .
+## &lt;https://github.com/zoometh/itineris/tree/main/villa del foro&gt; &lt;https://github.com/zoometh/itineris/tree/main/773&gt; &quot;VF E8/1000 VF M5&quot; .
+## &lt;https://github.com/zoometh/itineris/tree/main/castello di annone&gt; &lt;https://github.com/zoometh/itineris/tree/main/832&gt; &quot;CdA Viarengo  CdA M3&quot; .
+## &lt;https://github.com/zoometh/itineris/tree/main/castello di annone&gt; &lt;https://github.com/zoometh/itineris/tree/main/881.38815625&gt; &quot;CdA Viarengo  CdA M1&quot; .</code></pre>
+<p>Ces triples peuvent être sérialisés sous le format <a href="#MJsonLd">JSON-LD</a> qui est le format le plus populaire pour décrire des données web.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>json.name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(local.dir, <span class="st">&quot;data/&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                    rdf.label, <span class="st">&quot;_&quot;</span>, rdf.type, <span class="st">&quot;_&quot;</span>, rdf.about, <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">Sys.Date</span>(),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;.json&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rdf_serialize</span>(rdf, json.name, <span class="st">&quot;jsonld&quot;</span>) </span></code></pre></div>
+<p>Ce fichier peut ensuite être déposé sur une plateforme :</p>
+<center>
+<a href="https://raw.githubusercontent.com/zoometh/itineris/main/data/NumLab_Cu_Source_2021-10-01.json">https://raw.githubusercontent.com/zoometh/itineris/main/data/NumLab_Cu_Source_2021-10-01.json</a>
+</center>
+<p>La base de données, accessible en ligne, est interopérable avec des procédures R (package <a href="https://cran.r-project.org/web/packages/RODBC/index.html">RODBC</a>) et Python (<a href="https://pypi.org/project/pyodbc/">pyodbc</a>). Ces procédures facilitent l’intéropérabilité des données (<em>linked data</em>, LD) et le traitement de leur métadonnées. Celles-ci seront représentées préférentiellement avec <a href="#MJsonLd">D</a>, sous forme de graphes <a href="#Frdf">RDF</a>. Les données sérialisées seront décrites avec <a href="https://www.w3.org/OWL/">OWL</a> ou <a href="https://www.w3.org/TR/prov-o/">PROV-O</a> et leur historique, et celui de leur métadonnées, se fera avec <a href="https://www.w3.org/TR/void/">VoID</a>. Une fois sérialisées, ces données sont trouvable avec <a href="https://www.w3.org/TR/rdf-sparql-query/">SPARQL</a>.</p>
 </div>
 </div>
 </div>
@@ -948,10 +2437,10 @@ logo
 </table>
 </div>
 <div id="part" class="section level1">
-<h1>Membres du projet et Work packages</h1>
+<h1>Membres et work packages</h1>
 <div class="figure" style="text-align: center">
-<div id="htmlwidget-54939ad5c3a096d1e5aa" style="width:900px;height:900px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-54939ad5c3a096d1e5aa">{"x":{"nodes":{"id":["WP1","WP2","WP3","T.2A,ICP-MS analysis","T.2B,Isotopic analysis","T.2B,SEM analysis","T.3,2D/3D X-r imagery","T.4,Inventory/Drawing","T.4,Scan 3D & RTI","T.4,Microscopic analysis","T.5A,Web Database","T.5B,Modelling","CNRS-PSL AOrOc,UMR8546","C2RMF Louvre","Musée d'Archéologie,nationale","University of Padua","University of Turin","Musei Reali of Turin","Musei Civici of Reggio Emilia"],"label":["WP1","WP2","WP3","T.2A\nICP-MS analysis","T.2B\nIsotopic analysis","T.2B\nSEM analysis","T.3\n2D/3D X-r imagery","T.4\nInventory/Drawing","T.4\nScan 3D & RTI","T.4\nMicroscopic analysis","T.5A\nWeb Database","T.5B\nModelling","","","","","","",""],"color":["#ea5c00","#475c7d","#7e9f15","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f"],"title":["WP1 Archaeometric analysis","WP2 Archaeological & Technological analysis","WP3 Datamanagement & Modeling","Inductively coupled plasma mass spectrometry (ICP-MS)","<i>Analyses isotopiques<\/i>","Scanning electron microscope (SEM)","X-ray fluorescence (XRF)","<i>Inventaire, dessins<\/i>","<i>Scanner 3D<\/i>","<i>Analyses microscopiques<\/i>","<i>Base de données web<\/i>","<i>Modélisation<\/i>","<a href='http://www.archeo.ens.fr/'><b>CNRS-PSL AOrOc UMR8546<\/b><\/a><br>\n             Veronica CICOLANI<a href=https://orcid.org/0000-0003-0326-299X><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Julien ZURBACH<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Agnès TRICOCHE<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Jean-Baptiste HOUAL<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Frédérique MARCHAND-BEAULIEU<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://c2rmf.fr/'><b>C2RMF Louvre<\/b><\/a><br>\n             Benoît MILLE<a href=https://orcid.org/0000-0003-0151-265X><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><br>\n             Elsa LAMBERT<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://musee-archeologienationale.fr/'><b>Musée d'Archéologie nationale<\/b><\/a><br>\n             Christine LORRE<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://www.unipd.it/en/'><b>University of Padua<b><\/a><br>\n             Gilberto ARTIOLI<a href=https://orcid.org/0000-0002-8693-7392><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><\/a><br>\n             Ivana ANGELINI<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://en.unito.it/'><b>University of Turin<b><\/a><br>\n             Alessandro LO GIUDICE<a href=https://orcid.org/0000-0003-4753-3165><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><\/a><br>\n             Alessandro RE<a href=https://orcid.org/0000-0001-9952-5488><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><\/a><br>\n             Eliano DIANA<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://www.museireali.beniculturali.it/'><b>Musei Reali of Turin<\/b><\/a><br>\n             Elisa PEREGO<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://www.musei.re.it/'><b>Musei Civici of Reggio Emilia<\/b><\/a><br>\n             Giada PELLEGRINI<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>"],"font.size":[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],"font.color":["black","black","black","black","black","black","black","black","black","black","black","black","red","red","red","red","red","red","red"],"image":["","","","","","","","","","","","","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/aoroc.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/c2rmf.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/man.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/uni-padua.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/uni-torino.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/musei-torino.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/musei-reggio.png"],"shape":["box","box","box","text","text","text","text","text","text","text","text","text","image","image","image","image","image","image","image"],"size":[30,30,30,8,8,8,8,8,8,8,8,8,25,25,25,25,25,25,25],"group":["wkp","wkp","wkp","tsk","tsk","tsk","tsk","tsk","tsk","tsk","tsk","tsk","wkp","wkp","wkp","wkp","wkp","wkp","wkp"]},"edges":{"from":["T.2A,ICP-MS analysis","T.2B,Isotopic analysis","T.2B,SEM analysis","T.3,2D/3D X-r imagery","T.4,Inventory/Drawing","T.4,Scan 3D & RTI","T.4,Microscopic analysis","T.5A,Web Database","T.5B,Modelling","CNRS-PSL AOrOc,UMR8546","CNRS-PSL AOrOc,UMR8546","CNRS-PSL AOrOc,UMR8546","C2RMF Louvre","C2RMF Louvre","Musée d'Archéologie,nationale","Musée d'Archéologie,nationale","University of Padua","University of Turin","University of Turin","Musei Reali of Turin","Musei Reali of Turin","Musei Civici of Reggio Emilia","Musei Civici of Reggio Emilia"],"to":["WP1","WP1","WP1","WP1","WP2","WP2","WP2","WP3","WP3","WP1","WP2","WP3","WP1","WP2","WP1","WP2","WP1","WP1","WP2","WP1","WP2","WP1","WP2"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["wkp","tsk"],"width":"900px","height":"900px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-393021c8ee3b0995bff5" style="width:900px;height:900px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-393021c8ee3b0995bff5">{"x":{"nodes":{"id":["WP1","WP2","WP3","T.2A,ICP-MS analysis","T.2B,Isotopic analysis","T.2B,SEM analysis","T.3,2D/3D X-r imagery","T.4,Inventory/Drawing","T.4,Scan 3D & RTI","T.4,Microscopic analysis","T.5A,Web Database","T.5B,Modelling","CNRS-PSL AOrOc,UMR8546","C2RMF Louvre","Musée d'Archéologie,nationale","University of Padua","University of Turin","Musei Reali of Turin","Musei Civici of Reggio Emilia"],"label":["WP1","WP2","WP3","T.2A\nICP-MS analysis","T.2B\nIsotopic analysis","T.2B\nSEM analysis","T.3\n2D/3D X-r imagery","T.4\nInventory/Drawing","T.4\nScan 3D & RTI","T.4\nMicroscopic analysis","T.5A\nWeb Database","T.5B\nModelling","","","","","","",""],"color":["#ea5c00","#475c7d","#7e9f15","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f","#0f0f0f"],"title":["WP1 Archaeometric analysis","WP2 Archaeological & Technological analysis","WP3 Datamanagement & Modeling","Inductively coupled plasma mass spectrometry (ICP-MS)","<i>Analyses isotopiques<\/i>","Scanning electron microscope (SEM)","X-ray fluorescence (XRF)","<i>Inventaire, dessins<\/i>","<i>Scanner 3D<\/i>","<i>Analyses microscopiques<\/i>","<i>Base de données web<\/i>","<i>Modélisation<\/i>","<a href='http://www.archeo.ens.fr/'><b>CNRS-PSL AOrOc UMR8546<\/b><\/a><br>\n             Veronica CICOLANI<a href=https://orcid.org/0000-0003-0326-299X><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Julien ZURBACH<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Agnès TRICOCHE<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Jean-Baptiste HOUAL<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a><br>\n             Frédérique MARCHAND-BEAULIEU<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://c2rmf.fr/'><b>C2RMF Louvre<\/b><\/a><br>\n             Benoît MILLE<a href=https://orcid.org/0000-0003-0151-265X><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><br>\n             Elsa LAMBERT<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://musee-archeologienationale.fr/'><b>Musée d'Archéologie nationale<\/b><\/a><br>\n             Christine LORRE<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://www.unipd.it/en/'><b>University of Padua<b><\/a><br>\n             Gilberto ARTIOLI<a href=https://orcid.org/0000-0002-8693-7392><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><\/a><br>\n             Ivana ANGELINI<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://en.unito.it/'><b>University of Turin<b><\/a><br>\n             Alessandro LO GIUDICE<a href=https://orcid.org/0000-0003-4753-3165><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><\/a><br>\n             Alessandro RE<a href=https://orcid.org/0000-0001-9952-5488><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png  width=15><\/a><br>\n             Eliano DIANA<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://www.museireali.beniculturali.it/'><b>Musei Reali of Turin<\/b><\/a><br>\n             Elisa PEREGO<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>","<a href='https://www.musei.re.it/'><b>Musei Civici of Reggio Emilia<\/b><\/a><br>\n             Giada PELLEGRINI<a href=https://github.com/zoometh/itineris/blob/master/www/404miss.md><img alt=Qries src=https://raw.githubusercontent.com/zoometh/itineris/main/www/varia/orcid.png width=15><\/a>"],"font.size":[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],"font.color":["black","black","black","black","black","black","black","black","black","black","black","black","red","red","red","red","red","red","red"],"image":["","","","","","","","","","","","","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/aoroc.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/c2rmf.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/man.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/uni-padua.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/uni-torino.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/musei-torino.png","https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/musei-reggio.png"],"shape":["box","box","box","text","text","text","text","text","text","text","text","text","image","image","image","image","image","image","image"],"size":[30,30,30,8,8,8,8,8,8,8,8,8,25,25,25,25,25,25,25],"group":["wkp","wkp","wkp","tsk","tsk","tsk","tsk","tsk","tsk","tsk","tsk","tsk","wkp","wkp","wkp","wkp","wkp","wkp","wkp"]},"edges":{"from":["T.2A,ICP-MS analysis","T.2B,Isotopic analysis","T.2B,SEM analysis","T.3,2D/3D X-r imagery","T.4,Inventory/Drawing","T.4,Scan 3D & RTI","T.4,Microscopic analysis","T.5A,Web Database","T.5B,Modelling","CNRS-PSL AOrOc,UMR8546","CNRS-PSL AOrOc,UMR8546","CNRS-PSL AOrOc,UMR8546","C2RMF Louvre","C2RMF Louvre","Musée d'Archéologie,nationale","Musée d'Archéologie,nationale","University of Padua","University of Turin","University of Turin","Musei Reali of Turin","Musei Reali of Turin","Musei Civici of Reggio Emilia","Musei Civici of Reggio Emilia"],"to":["WP1","WP1","WP1","WP1","WP2","WP2","WP2","WP3","WP3","WP1","WP2","WP3","WP1","WP2","WP1","WP2","WP1","WP1","WP2","WP1","WP2","WP1","WP2"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":["wkp","tsk"],"width":"900px","height":"900px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Description des <em>Work packages</em> (WP), <em>task</em> (T.) et des acteurs institutionnels
 </p>
@@ -960,33 +2449,41 @@ Description des <em>Work packages</em> (WP), <em>task</em> (T.) et des acteurs i
 <h2>Work packages</h2>
 <div id="WP1" class="section level3">
 <h3>WP1: Archaeometric analysis</h3>
-<p><em>Lorem ipsum dolor sit amet, eleifend a lacinia vestibulum quis mi facilisis quis sed, commodo. Et a lacinia magna litora quis mollis interdum integer eu et sed vel. Habitasse nascetur ipsum id platea mauris maximus, pellentesque vel. Tincidunt efficitur, taciti est ut, aliquet quis felis laoreet dui egestas tristique faucibus. Tempus malesuada. Amet rhoncus vel interdum auctor in potenti ligula. Cum in tellus eget imperdiet lorem velit egestas. Amet fringilla erat maximus vivamus, duis sodales efficitur velit. Lacus convallis platea, nullam, suspendisse. Euismod finibus tincidunt egestas ex ut malesuada lectus libero, quam torquent sollicitudin nam! Cras montes massa mollis elementum id fermentum.</em></p>
+<p><em>Lorem ipsum dolor sit amet, vulputate, ultrices luctus platea. Aliquet sociis primis dictumst, nec platea accumsan laoreet quis. Tempor augue ut in. Eu malesuada maximus rutrum. Condimentum nulla penatibus felis, praesent scelerisque in in risus, ut. Ex amet eu. Sit varius mauris posuere ullamcorper dui netus maecenas dignissim, sed. Amet duis taciti dapibus finibus. Primis accumsan urna placerat. Integer porttitor a diam cubilia sed. Ex tempor at, metus cras vel curae nec arcu mauris ut quam, proin. Nisi scelerisque lacus sodales mollis vestibulum dolor.</em></p>
 </div>
 <div id="WP2" class="section level3">
 <h3>WP2: Archaeological &amp; Technological analysis</h3>
-<p><em>Lorem ipsum dolor sit amet, ut aliquam duis lorem. Suscipit vel venenatis, sit arcu. Molestie nisl eget eu varius, at ut cum magnis maximus. Nostra lobortis, commodo non rhoncus nec molestie. Sed massa enim enim feugiat dignissim in condimentum vestibulum. Ut, et nunc, pretium ipsum porta. Senectus praesent luctus vel in pellentesque odio id accumsan nisl odio, lacus. At fringilla ut id, id congue velit rhoncus vivamus dui lacinia id lobortis. Vestibulum in dui sed enim laoreet vehicula. Maximus rhoncus amet lacinia, varius velit ligula amet phasellus, id non, et facilisis. Turpis justo scelerisque et fusce, lectus nec ridiculus porttitor diam.</em></p>
+<p><em>Lorem ipsum dolor sit amet, nulla vestibulum dictumst, ac a maximus sit potenti blandit eu habitasse. Ac interdum ut ac. Nec massa pellentesque auctor. Nec non dolor hac, tempor dis sed ligula elit. Magna non faucibus urna quam, diam erat phasellus blandit sem sit neque. Curabitur nunc sit quam sapien nulla, commodo. Sed nec vel sed sed platea egestas tincidunt, sed malesuada. Ut molestie pellentesque etiam, nisl nullam proin purus. Inceptos ac sit ultrices. Proin vel euismod in et mattis suspendisse. Et ac pretium, ut magna augue, mauris.</em></p>
 </div>
 <div id="WP3" class="section level3">
 <h3>WP3: Data management &amp; Computational archaeology</h3>
-<p><em>Lorem ipsum dolor sit amet, ac eu tristique in quis consequat. Aenean vel nisl, sem ac nam gravida taciti, sed quis odio. At elit mi eu non arcu, erat odio, per sed. Elementum nibh, accumsan sed dolor in porta non, cubilia suspendisse, sed at ipsum vel. Ut ut litora et tincidunt nec molestie adipiscing tempor nam. Magnis vestibulum sit pharetra eget vestibulum. Ut, vitae platea dis fames donec arcu ipsum sed, commodo augue. Et, velit vehicula pellentesque quis imperdiet sed sed neque in. Feugiat vitae himenaeos amet nunc non, aptent lorem egestas diam eleifend nec leo. In rhoncus mauris fermentum efficitur augue nullam. Etiam blandit ut elit ad, commodo, lacus in senectus vivamus mauris class ac et maximus.</em></p>
+<p><em>Lorem ipsum dolor sit amet, sit eget sed, facilisi nec pulvinar viverra in ante. Vestibulum lorem nunc id dictum vestibulum velit! A urna in venenatis est pharetra viverra massa. Cursus lorem sed fames convallis eu justo vitae enim congue. Ut vel luctus risus sed porta eros facilisi ridiculus vitae amet consequat, lacinia. Ullamcorper potenti quis libero mauris, purus massa scelerisque euismod. Tincidunt, sed nec. Sed vitae neque non nunc integer lectus aptent finibus eget, a fermentum. Lectus mauris nisl tincidunt orci nam vel proin mus faucibus porta. Sed justo adipiscing egestas placerat ut auctor eu viverra. A felis scelerisque. Gravida sapien mauris tempus, et, parturient sit. Sapien imperdiet ligula nec vel ut. Metus ut ligula, malesuada dui. Lorem eleifend dis mauris nunc lacus tristique, dignissim platea torquent pulvinar. Vitae sed luctus auctor platea non quam libero eu ut mattis ut dolor.</em></p>
 </div>
 </div>
 </div>
-<div id="lexique" class="section level1">
-<h1>Lexique</h1>
-<div id="métadonnées" class="section level2">
-<h2>Métadonnées</h2>
+<div id="glossaire" class="section level1">
+<h1>Glossaire</h1>
+<div id="modèles-des-données-et-métadonnées" class="section level2">
+<h2>Modèles des données et métadonnées</h2>
 <div id="MExif" class="section level3">
 <h3>EXIF</h3>
 <p>Ce standard pour la description des métadonnées des photographies numériques est le plus largement utilisé. Il est intéropérable avec le langage R (package <a href="https://cran.r-project.org/web/packages/exifr/index.html">exifr</a>)</p>
 </div>
-<div id="MXmp" class="section level3">
-<h3>XMP</h3>
-<p>Standard pour la description des métadonnées des photographies numériques au format <a href="#Fxml">.xml</a>. Sérialisable (<a href="#Frdf">RDF</a>/<a href="#Fxml">.xml</a>), il supporte entièrement le <a href="https://www.iso.org/standard/71339.html">Dublin Core</a>.</p>
-</div>
 <div id="MInspire" class="section level3">
 <h3>INSPIRE</h3>
 <p>Norme internationale pour les métadonnées spatiales (ISO <a href="https://www.iso.org/standard/32557.html">19139:2007</a>)</p>
+</div>
+<div id="MJsonLd" class="section level3">
+<h3>JSON-LD</h3>
+<p>Méthode d’encodage de données structurées pour <a href="#Fjson">.json</a> ou <a href="#Fgeojson">.geojson</a>. C’est une recommendation du W3C. JSON-LD est l’une des syntaxes possibles du <a href="#Frdf">RDF</a> et va être intégré par Google.</p>
+</div>
+<div id="Frdf" class="section level3">
+<h3>RDF</h3>
+<p>Les triples RDF, ou graphes RDF, forment le standard et langage de base de description du web sémantique et du web de données. Il a été développé et adopté par le W3C pour l’échange des données.</p>
+</div>
+<div id="MXmp" class="section level3">
+<h3>XMP</h3>
+<p>Standard pour la description des métadonnées des photographies numériques au format <a href="#Fxml">.xml</a>. Sérialisable (<a href="#Frdf">RDF</a>/<a href="#Fxml">.xml</a>), il supporte entièrement le <a href="https://www.iso.org/standard/71339.html">Dublin Core</a>.</p>
 </div>
 </div>
 <div id="formats-ouverts" class="section level2">
@@ -1001,15 +2498,11 @@ Description des <em>Work packages</em> (WP), <em>task</em> (T.) et des acteurs i
 </div>
 <div id="Fjson" class="section level3">
 <h3>.json</h3>
-<p>C’est LE format le plus courant pour écrire les graphes RDF. Le format .json est en train de remplacer <a href="#Fxml">.xml</a> comme principal format d’échange de données (v. aussi <a href="#Fgeojson">.geojson</a>).</p>
+<p>C’est LE format le plus courant pour écrire les graphes RDF. Le format .json est en train de remplacer <a href="#Fxml">.xml</a> comme principal format d’échange de données (v. aussi <a href="#Fgeojson">.geojson</a> et <a href="#MJsonLd">JSON-LD</a>).</p>
 </div>
 <div id="Fply" class="section level3">
 <h3>.ply</h3>
 <p>C’est le format privilégié pour l’enregistrement des données 3D, notamment pour le Web3D.</p>
-</div>
-<div id="Frdf" class="section level3">
-<h3>.rdf</h3>
-<p>Les triples RDF, ou graphes RDF, forment le standard et langage de base de description du web sémantique et du web de données. Il a été développé et adopté par le W3C pour l’échange des données.</p>
 </div>
 <div id="Fshp" class="section level3">
 <h3>.shp</h3>
