@@ -15,4 +15,4 @@ The Data Management Plan (DMP) (french: *Plan de Gestion des Données*) is compo
   
   + A resume of [isostandards]([https://github.com/zoometh/itineris/blob/main/data/isos_resume.tsv]) used in Itineris ANR 
   
-If you are a partner of the Itineris ANR project, see [how to contribute](https://github.com/zoometh/itineris/blob/master/dmp/CONTRIBUTING.md) to the preparation of the DMP
+If you are a member of the Itineris ANR project, see [how to contribute](https://github.com/zoometh/itineris/blob/master/dmp/CONTRIBUTING.md) to the preparation of the DMP
