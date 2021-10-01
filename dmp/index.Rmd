@@ -57,8 +57,8 @@ data.base <- 'https://raw.github.com/zoometh/itineris/master/data/'
 url.data.res <- paste0(data.base, 'data_resume.tsv')
 url.tools.res <- paste0(data.base, 'tools_resume.tsv')
 url.isos.res <- paste0(data.base, 'isos_resume.tsv')
-url.part_nodes.res <- paste0(data.base, 'part_nodes_resume.tsv')
-url.part_edges.res <- paste0(data.base, 'part_edges_resume.tsv')
+url.mbr_nodes.res <- paste0(data.base, 'mbr_nodes_resume.tsv')
+url.mbr_edges.res <- paste0(data.base, 'mbr_edges_resume.tsv')
 
 
 data.res <- read.table(url.data.res, header = T, sep = "\t", row.names = NULL)
@@ -297,9 +297,9 @@ kable(df.humanum,"html",
 ```{r calibrate, fig.height= 14, fig.width= 14, echo=FALSE, fig.align='center', fig.cap="Description des *Work packages* (WP), *task* (T.) et des acteurs institutionnels"}
 
 # # View(dd)
-part_nodes.res <- read.table(url.part_nodes.res, header = T, sep = "\t", row.names = NULL)
-part_edges.res <- read.table(url.part_edges.res, header = T, sep = "\t", row.names = NULL)
-visNetwork(part_nodes.res, part_edges.res, 
+mbr_nodes.res <- read.table(url.mbr_nodes.res, header = T, sep = "\t", row.names = NULL)
+mbr_edges.res <- read.table(url.mbr_edges.res, header = T, sep = "\t", row.names = NULL)
+visNetwork(mbr_nodes.res, mbr_edges.res, 
            width = "1000px", height = "1000px")
 ```
 
