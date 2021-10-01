@@ -1,44 +1,44 @@
 "id"	"label"	"color"	"title"	"font.size"	"font.color"	"image"	"shape"	"size"	"group"
-"1"	"WP1"	"WP1"	"#ffff00"	"WP1 Archaeometric analysis"	15	"black"	""	"box"	30	"wkp"
-"2"	"WP2"	"WP2"	"#e26b0a"	"WP2 Archaeological & Technological analysis"	15	"black"	""	"box"	30	"wkp"
-"3"	"WP3"	"WP3"	"#963634"	"WP3 Datamanagement & Modeling"	15	"black"	""	"box"	30	"wkp"
-"4"	"T.2A,ICP-MS analysis"	"T.2A
+"WP1"	"WP1"	"#ffff00"	"WP1 Archaeometric analysis"	15	"black"	""	"box"	30	"wkp"
+"WP2"	"WP2"	"#e26b0a"	"WP2 Archaeological & Technological analysis"	15	"black"	""	"box"	30	"wkp"
+"WP3"	"WP3"	"#963634"	"WP3 Datamanagement & Modeling"	15	"black"	""	"box"	30	"wkp"
+"T.2A,ICP-MS analysis"	"T.2A
 ICP-MS analysis"	"#808080"	"Inductively coupled plasma mass spectrometry (ICP-MS)"	15	"black"	""	"text"	8	"tsk"
-"5"	"T.2B,Isotopic analysis"	"T.2B
+"T.2B,Isotopic analysis"	"T.2B
 Isotopic analysis"	"#808080"	"<i>Analyses isotopiques</i>"	15	"black"	""	"text"	8	"tsk"
-"6"	"T.2B,SEM analysis"	"T.2B
+"T.2B,SEM analysis"	"T.2B
 SEM analysis"	"#808080"	"Scanning electron microscope (SEM)"	15	"black"	""	"text"	8	"tsk"
-"7"	"T.3,2D/3D X-r imagery"	"T.3
+"T.3,2D/3D X-r imagery"	"T.3
 2D/3D X-r imagery"	"#808080"	"X-ray fluorescence (XRF)"	15	"black"	""	"text"	8	"tsk"
-"8"	"T.4,Inventory/Drawing"	"T.4
+"T.4,Inventory/Drawing"	"T.4
 Inventory/Drawing"	"#808080"	"<i>Inventaire, dessins</i>"	15	"black"	""	"text"	8	"tsk"
-"9"	"T.4,Scan 3D & RTI"	"T.4
+"T.4,Scan 3D & RTI"	"T.4
 Scan 3D & RTI"	"#808080"	"<i>Scanner 3D</i>"	15	"black"	""	"text"	8	"tsk"
-"10"	"T.4,Microscopic analysis"	"T.4
+"T.4,Microscopic analysis"	"T.4
 Microscopic analysis"	"#808080"	"<i>Analyses microscopiques</i>"	15	"black"	""	"text"	8	"tsk"
-"11"	"T.5A,Web Database"	"T.5A
+"T.5A,Web Database"	"T.5A
 Web Database"	"#808080"	"<i>Base de données web</i>"	15	"black"	""	"text"	8	"tsk"
-"12"	"T.5B,Modelling"	"T.5B
+"T.5B,Modelling"	"T.5B
 Modelling"	"#808080"	"<i>Modélisation</i>"	15	"black"	""	"text"	8	"tsk"
-"13"	"CNRS-PSL AOrOc,UMR8546"	""	"#d3d3d3"	"<a href='http://www.archeo.ens.fr/'><b>CNRS-PSL AOrOc UMR8546</b></a><br>
+"CNRS-PSL AOrOc,UMR8546"	""	"#d3d3d3"	"<a href='http://www.archeo.ens.fr/'><b>CNRS-PSL AOrOc UMR8546</b></a><br>
              Veronica CICOLANI<br>
              Julien ZURBACH<br>
              Agnès TRICOCHE<br>
              Jean-Baptiste HOUAL<br>
              Frédérique MARCHAND-BEAULIEU"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/aoroc.png"	"image"	25	"wkp"
-"14"	"C2RMF Louvre"	""	"#d3d3d3"	"<a href='https://c2rmf.fr/'><b>C2RMF Louvre</b></a><br>
+"C2RMF Louvre"	""	"#d3d3d3"	"<a href='https://c2rmf.fr/'><b>C2RMF Louvre</b></a><br>
              Benoît MILLE<br>
              Elsa LAMBERT"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/c2rmf.png"	"image"	25	"wkp"
-"15"	"Musée d'Archéologie,nationale"	""	"#d3d3d3"	"<a href='https://musee-archeologienationale.fr/'><b>Musée d'Archéologie nationale</b></a><br>
+"Musée d'Archéologie,nationale"	""	"#d3d3d3"	"<a href='https://musee-archeologienationale.fr/'><b>Musée d'Archéologie nationale</b></a><br>
              Christine LORRE"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/man.png"	"image"	25	"wkp"
-"16"	"University of Padua"	""	"#d3d3d3"	"<a href='https://www.unipd.it/en/'><b>University of Padua<b></a><br>
+"University of Padua"	""	"#d3d3d3"	"<a href='https://www.unipd.it/en/'><b>University of Padua<b></a><br>
              Gilberto ARTIOLI<br>
              Ivana ANGELINI"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/uni-padua.png"	"image"	25	"wkp"
-"17"	"University of Turin"	""	"#d3d3d3"	"<a href='https://en.unito.it/'><b>University of Turin<b></a><br>
+"University of Turin"	""	"#d3d3d3"	"<a href='https://en.unito.it/'><b>University of Turin<b></a><br>
              Alessandro LO GIUDICE<br>
              Alessandro RE<br>
              Eliano DIANA"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/uni-torino.png"	"image"	25	"wkp"
-"18"	"Musei Reali of Turin"	""	"#d3d3d3"	"<a href='https://www.museireali.beniculturali.it/'><b>Musei Reali of Turin</b></a><br>
+"Musei Reali of Turin"	""	"#d3d3d3"	"<a href='https://www.museireali.beniculturali.it/'><b>Musei Reali of Turin</b></a><br>
              Elisa PEREGO"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/musei-torino.png"	"image"	25	"wkp"
-"19"	"Musei Civici of Reggio Emilia"	""	"#d3d3d3"	"<a href='https://www.musei.re.it/'><b>Musei Civici of Reggio Emilia</b></a><br>
+"Musei Civici of Reggio Emilia"	""	"#d3d3d3"	"<a href='https://www.musei.re.it/'><b>Musei Civici of Reggio Emilia</b></a><br>
              Giada PELLEGRINI"	15	"red"	"https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/musei-reggio.png"	"image"	25	"wkp"
