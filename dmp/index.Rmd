@@ -1,5 +1,5 @@
 ---
-title: "<b>Plan de Gestion des données</b><br> du projet ANR <b>Itineris</b><br>"
+title: "<b>Plan de Gestion des Données</b><br> du projet ANR <b>Itineris</b><br>"
 bibliography: "D:/DocumentationArcheo/biblio12.bib"
 # bibliography: "C:/Users/supernova/Dropbox/My PC (supernova-pc)/Documents/golasecca/bibliographie.bib"
 # author: "Thomas Huet"
@@ -332,16 +332,16 @@ kable(example1.ITA.t, "html",
                 position = "center",
                 font_size=12)
 ```
-Pour les besoins de la sérialisation, certains noms de champs sont retranscris en anglais en nous servant de la table de correspondances linguistique (voir \ref{lexicon}).
+Pour les besoins de la sérialisation, certains noms de champs sont retranscris en anglais en nous servant de la table de correspondances linguistique (voir ci-dessus).
 
 ```{r serial, echo = F}
 example1.ENG <- example1.ITA
 names(example1.ENG) <- lexicon$ENG[match(names(example1.ITA), lexicon$ITA)]
 example1.ENG.t <- t(example1.ENG)
 # colnames(example1.t)[1] <- "valeurs"
-kable(example1.ENG.t, "html",
+kable(head(example1.ENG.t), "html",
       # row.names = F,
-      caption = "Analyses élémentaires, exemple 1, traduit en anglais") %>%
+      caption = "Analyses élémentaires, exemple 1, champs traduit en anglais") %>%
   kable_styling(full_width = FALSE,
                 position = "center",
                 font_size=12)
@@ -383,7 +383,8 @@ rdf_serialize(rdf, json.name, "jsonld")
 Ce fichier peut ensuite être déposé sur une plateforme :
 
 <center>[https://raw.githubusercontent.com/zoometh/itineris/main/data/NumLab_Cu_Source_2021-10-01.json](https://raw.githubusercontent.com/zoometh/itineris/main/data/NumLab_Cu_Source_2021-10-01.json)</center>
-
+  
+  
 La base de données, accessible en ligne, est interopérable avec des procédures R (package  [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html)) et Python ([pyodbc](https://pypi.org/project/pyodbc/)). Ces procédures facilitent l'intéropérabilité des données (*linked data*, LD) et le traitement de leur métadonnées. Celles-ci seront représentées préférentiellement avec [D](#MJsonLd), sous forme de graphes [RDF](#Frdf). Les données sérialisées seront décrites avec [OWL](https://www.w3.org/OWL/) ou [PROV-O](https://www.w3.org/TR/prov-o/) et leur historique, et celui de leur métadonnées, se fera avec [VoID](https://www.w3.org/TR/void/). Une fois sérialisées, ces données sont trouvable avec [SPARQL](https://www.w3.org/TR/rdf-sparql-query/).
 
 # Infrastructuration des données {#humanum}
@@ -500,7 +501,7 @@ C'est le format privilégié pour l'enregistrement des données 3D, notamment po
 
 ### .shp{#Fshp}
 
-Le format .shp est le standard pour les données vectorielles géoréférencées, utilisé par tous les SIG (v. (.wkt)[#Fplaintext]))
+Le format .shp est le standard pour les données vectorielles géoréférencées, utilisé par tous les SIG (v. [.wkt](#Fplaintext))
 
 ### .u3d{#Fu3d}
 
