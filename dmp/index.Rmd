@@ -8,7 +8,7 @@ output:
   html_document:
     highlight: tango
     toc: true
-    toc_depth: 3
+    toc_depth: 2
     toc_float:
       collapsed: false
       smooth_scroll: false
@@ -55,191 +55,161 @@ text.size <- 15
 # informations résumé
 data.base <- 'https://raw.github.com/zoometh/itineris/master/data/'
 url.data.res <- paste0(data.base, 'data_resume.tsv')
-data.res <- read.table(url.data.res, header = T, sep = "\t", row.names = NULL)
 url.tools.res <- paste0(data.base, 'tools_resume.tsv')
 url.isos.res <- paste0(data.base, 'isos_resume.tsv')
+url.part_nodes.res <- paste0(data.base, 'part_nodes_resume.tsv')
+url.part_edges.res <- paste0(data.base, 'part_edges_resume.tsv')
 
 
-
+data.res <- read.table(url.data.res, header = T, sep = "\t", row.names = NULL)
 n.sites <- sum(data.res$nb.sites)
 n.obj <- sum(data.res$nb.obj)
 
+
 base <- "https://github.com/zoometh/itineris/tree/main/"
 inst.logo.root <- "https://raw.githubusercontent.com/zoometh/itineris/main/www/inst/"
-# load(file=paste0(base,"df_per_count.RData"))
-# getwd()
-# load("LOD/df_per_count.RData")
-
-# insttutions
-# path.logos <- "https://raw.githubusercontent.com/zoometh/golasecca/main/img/logo/"
-name.i <- c("CNRS-PSL AOrOc,UMR8546",
-            "C2RMF Louvre",
-            "Musée d'Archéologie,nationale",
-            "University of Padua",
-            "University of Turin",
-            "Musei Reali of Turin",
-            "Musei Civici of Reggio Emilia"
-)
-name.im <- c(paste0(inst.logo.root, "aoroc.png"),
-             paste0(inst.logo.root, "c2rmf.png"),
-             paste0(inst.logo.root, "man.png"),
-             paste0(inst.logo.root, "uni-padua.png"),
-             paste0(inst.logo.root, "uni-torino.png"),
-             paste0(inst.logo.root, "musei-torino.png"),
-             paste0(inst.logo.root, "musei-reggio.png"))
-name.ip <- c("<a href='http://www.archeo.ens.fr/'><b>CNRS-PSL AOrOc UMR8546</b></a><br>
-             Veronica CICOLANI<br>
-             Julien ZURBACH<br>
-             Agnès TRICOCHE<br>
-             Jean-Baptiste HOUAL<br>
-             Frédérique MARCHAND-BEAULIEU",
-             "<a href='https://c2rmf.fr/'><b>C2RMF Louvre</b></a><br>
-             Benoît MILLE<br>
-             Elsa LAMBERT",
-             "<a href='https://musee-archeologienationale.fr/'><b>Musée d'Archéologie nationale</b></a><br>
-             Christine LORRE",
-             "<a href='https://www.unipd.it/en/'><b>University of Padua<b></a><br>
-             Gilberto ARTIOLI<br>
-             Ivana ANGELINI",
-             "<a href='https://en.unito.it/'><b>University of Turin<b></a><br>
-             Alessandro LO GIUDICE<br>
-             Alessandro RE<br>
-             Eliano DIANA",
-             "<a href='https://www.museireali.beniculturali.it/'><b>Musei Reali of Turin</b></a><br>
-             Elisa PEREGO",
-             "<a href='https://www.musei.re.it/'><b>Musei Civici of Reggio Emilia</b></a><br>
-             Giada PELLEGRINI")
-# logos <- ("aoroc.png")
-n.inst <- length(name.i)
-# icons.path <- paste0(path.logos, logos)
-inst <- data.frame(id= name.i,
-                   # label = gsub(",","\n", name.i),
-                   label = rep("", n.inst),
-                   color = c(rep("#d3d3d3", n.inst)),
-                   title = name.ip,
-                   # title = c(name.ip, rep(stri_rand_lipsum(1), n.inst-1)),
-                   font.size = rep(text.size, n.inst),
-                   # font = list(size = c(rep(text.size, n.inst))),
-                   image = name.im,
-                   # image = c(rep(aoroc, n.inst)),
-                   font.color = c(rep("red", n.inst)),
-                   shape = c(rep("image", n.inst)),
-                   # shape = c(rep("text", n.inst)),
-                   size = c(rep(25, n.inst)),
-                   group = c(rep("wkp", n.inst))
-)
-# wp
-name.w <- c("WP1",
-            "WP2",
-            "WP3")
-n.wkps <- length(name.w)
-wkps <- data.frame(id= name.w,
-                   label = name.w,
-                   color = c("#ffff00","#e26b0a","#963634"),
-                   title = c("WP1 Archaeometric analysis",
-                             "WP2 Archaeological & Technological analysis",
-                             "WP3 Datamanagement & Modeling"),
-                   font.size = rep(text.size, n.wkps),
-                   font.color = c(rep("black", n.wkps)),
-                   # font = list(size = c(rep(text.size, n.wkps))),
-                   image = c(rep("", n.wkps)),
-                   shape = c(rep("box", n.wkps)),
-                   size = c(rep(30, n.wkps)),
-                   group = c(rep("wkp", n.wkps))
-)
-# tasks
-name.t <- c("T.2A,ICP-MS analysis",
-            "T.2B,Isotopic analysis",
-            "T.2B,SEM analysis",
-            "T.3,2D/3D X-r imagery",
-            "T.4,Inventory/Drawing",
-            "T.4,Scan 3D & RTI",
-            "T.4,Microscopic analysis",
-            "T.5A,Web Database",
-            "T.5B,Modelling")
-n.tasks <- length(name.t)
-tasks <- data.frame(id=name.t,
-                    label = gsub(",","\n", name.t), # breakline sur ','
-                    color = c(rep("#808080", n.tasks)),
-                    title = c("Inductively coupled plasma mass spectrometry (ICP-MS)",
-                              "<i>Analyses isotopiques</i>",
-                              "Scanning electron microscope (SEM)",
-                              "X-ray fluorescence (XRF)",
-                              "<i>Inventaire, dessins</i>",
-                              "<i>Scanner 3D</i>",
-                              "<i>Analyses microscopiques</i>",
-                              "<i>Base de données web</i>",
-                              "<i>Modélisation</i>"),
-                    shape = c(rep("text", n.tasks)),
-                    font.size = rep(text.size, n.tasks),
-                    font.color = c(rep("black", n.tasks)),
-                    # font = list(size = c(rep(text.size, n.tasks))),
-                    image = c(rep("", n.tasks)),
-                    size = c(rep(8, n.tasks)),
-                    group = c(rep("tsk", n.tasks)))
-nodes <- rbind(wkps, tasks, inst)
-
-from.to.tsk <- data.frame(from = name.t,
-                          to = c(rep("WP1", 4),
-                                 rep("WP2", 3),
-                                 rep("WP3", 2)))
-from.to.inst <- data.frame(from = c(rep(name.i[1], 3),
-                                    rep(name.i[2], 2),
-                                    rep(name.i[3], 2),
-                                    rep(name.i[4], 1),
-                                    rep(name.i[5], 2),
-                                    rep(name.i[6], 2),
-                                    rep(name.i[7], 2)),
-                           to = c(c("WP1", "WP2", "WP3"),
-                                  c("WP1", "WP2"),
-                                  c("WP1", "WP2"),
-                                  c("WP1"),
-                                  c("WP1", "WP2"),
-                                  c("WP1", "WP2"),
-                                  c("WP1", "WP2"))
-)
-edges <- rbind(from.to.tsk,
-               from.to.inst,
-               width = ".5")
-
-# ## edges
-# from <- c(name.t,
-#           rep(name.i[1], 3),
-#           rep(name.i[2], 2),
-#           rep(name.i[3], 2),
-#           rep(name.i[4], 1),
-#           rep(name.i[5], 2),
-#           rep(name.i[6], 2))
-# to <- c(
-#   # task
-#   rep("WP1", 4),
-#   rep("WP2", 3),
-#   rep("WP3", 2),
-#   # institutions
-#   c("WP1", "WP2", "WP3"),
-#   c("WP1", "WP2"),
-#   c("WP1", "WP2"),
-#   c("WP1"),
-#   c("WP1", "WP2"),
-#   c("WP1", "WP2"),
-#   c("WP1", "WP2"))
-# tests
-# length(from)  == length(to)
+# name.i <- c("CNRS-PSL AOrOc,UMR8546",
+#             "C2RMF Louvre",
+#             "Musée d'Archéologie,nationale",
+#             "University of Padua",
+#             "University of Turin",
+#             "Musei Reali of Turin",
+#             "Musei Civici of Reggio Emilia"
+# )
+# name.im <- c(paste0(inst.logo.root, "aoroc.png"),
+#              paste0(inst.logo.root, "c2rmf.png"),
+#              paste0(inst.logo.root, "man.png"),
+#              paste0(inst.logo.root, "uni-padua.png"),
+#              paste0(inst.logo.root, "uni-torino.png"),
+#              paste0(inst.logo.root, "musei-torino.png"),
+#              paste0(inst.logo.root, "musei-reggio.png"))
+# name.ip <- c("<a href='http://www.archeo.ens.fr/'><b>CNRS-PSL AOrOc UMR8546</b></a><br>
+#              Veronica CICOLANI<br>
+#              Julien ZURBACH<br>
+#              Agnès TRICOCHE<br>
+#              Jean-Baptiste HOUAL<br>
+#              Frédérique MARCHAND-BEAULIEU",
+#              "<a href='https://c2rmf.fr/'><b>C2RMF Louvre</b></a><br>
+#              Benoît MILLE<br>
+#              Elsa LAMBERT",
+#              "<a href='https://musee-archeologienationale.fr/'><b>Musée d'Archéologie nationale</b></a><br>
+#              Christine LORRE",
+#              "<a href='https://www.unipd.it/en/'><b>University of Padua<b></a><br>
+#              Gilberto ARTIOLI<br>
+#              Ivana ANGELINI",
+#              "<a href='https://en.unito.it/'><b>University of Turin<b></a><br>
+#              Alessandro LO GIUDICE<br>
+#              Alessandro RE<br>
+#              Eliano DIANA",
+#              "<a href='https://www.museireali.beniculturali.it/'><b>Musei Reali of Turin</b></a><br>
+#              Elisa PEREGO",
+#              "<a href='https://www.musei.re.it/'><b>Musei Civici of Reggio Emilia</b></a><br>
+#              Giada PELLEGRINI")
+# # logos <- ("aoroc.png")
+# n.inst <- length(name.i)
+# # icons.path <- paste0(path.logos, logos)
+# inst <- data.frame(id= name.i,
+#                    # label = gsub(",","\n", name.i),
+#                    label = rep("", n.inst),
+#                    color = c(rep("#d3d3d3", n.inst)),
+#                    title = name.ip,
+#                    # title = c(name.ip, rep(stri_rand_lipsum(1), n.inst-1)),
+#                    font.size = rep(text.size, n.inst),
+#                    # font = list(size = c(rep(text.size, n.inst))),
+#                    image = name.im,
+#                    # image = c(rep(aoroc, n.inst)),
+#                    font.color = c(rep("red", n.inst)),
+#                    shape = c(rep("image", n.inst)),
+#                    # shape = c(rep("text", n.inst)),
+#                    size = c(rep(25, n.inst)),
+#                    group = c(rep("wkp", n.inst))
+# )
+# # wp
+# name.w <- c("WP1",
+#             "WP2",
+#             "WP3")
+# n.wkps <- length(name.w)
+# wkps <- data.frame(id= name.w,
+#                    label = name.w,
+#                    color = c("#ffff00","#e26b0a","#963634"),
+#                    title = c("WP1 Archaeometric analysis",
+#                              "WP2 Archaeological & Technological analysis",
+#                              "WP3 Datamanagement & Modeling"),
+#                    font.size = rep(text.size, n.wkps),
+#                    font.color = c(rep("black", n.wkps)),
+#                    # font = list(size = c(rep(text.size, n.wkps))),
+#                    image = c(rep("", n.wkps)),
+#                    shape = c(rep("box", n.wkps)),
+#                    size = c(rep(30, n.wkps)),
+#                    group = c(rep("wkp", n.wkps))
+# )
+# # tasks
+# name.t <- c("T.2A,ICP-MS analysis",
+#             "T.2B,Isotopic analysis",
+#             "T.2B,SEM analysis",
+#             "T.3,2D/3D X-r imagery",
+#             "T.4,Inventory/Drawing",
+#             "T.4,Scan 3D & RTI",
+#             "T.4,Microscopic analysis",
+#             "T.5A,Web Database",
+#             "T.5B,Modelling")
+# n.tasks <- length(name.t)
+# tasks <- data.frame(id=name.t,
+#                     label = gsub(",","\n", name.t), # breakline sur ','
+#                     color = c(rep("#808080", n.tasks)),
+#                     title = c("Inductively coupled plasma mass spectrometry (ICP-MS)",
+#                               "<i>Analyses isotopiques</i>",
+#                               "Scanning electron microscope (SEM)",
+#                               "X-ray fluorescence (XRF)",
+#                               "<i>Inventaire, dessins</i>",
+#                               "<i>Scanner 3D</i>",
+#                               "<i>Analyses microscopiques</i>",
+#                               "<i>Base de données web</i>",
+#                               "<i>Modélisation</i>"),
+#                     shape = c(rep("text", n.tasks)),
+#                     font.size = rep(text.size, n.tasks),
+#                     font.color = c(rep("black", n.tasks)),
+#                     # font = list(size = c(rep(text.size, n.tasks))),
+#                     image = c(rep("", n.tasks)),
+#                     size = c(rep(8, n.tasks)),
+#                     group = c(rep("tsk", n.tasks)))
+# nodes <- rbind(wkps, tasks, inst)
 # 
-# edges <- data.frame(from = from,
-#                     to = to,
-#                     width = ".5")
-network <- visNetwork(nodes, edges, 
-                      width = "900px", height = "900px")
+# from.to.tsk <- data.frame(from = name.t,
+#                           to = c(rep("WP1", 4),
+#                                  rep("WP2", 3),
+#                                  rep("WP3", 2)))
+# from.to.inst <- data.frame(from = c(rep(name.i[1], 3),
+#                                     rep(name.i[2], 2),
+#                                     rep(name.i[3], 2),
+#                                     rep(name.i[4], 1),
+#                                     rep(name.i[5], 2),
+#                                     rep(name.i[6], 2),
+#                                     rep(name.i[7], 2)),
+#                            to = c(c("WP1", "WP2", "WP3"),
+#                                   c("WP1", "WP2"),
+#                                   c("WP1", "WP2"),
+#                                   c("WP1"),
+#                                   c("WP1", "WP2"),
+#                                   c("WP1", "WP2"),
+#                                   c("WP1", "WP2"))
+# )
+# edges <- rbind(from.to.tsk,
+#                from.to.inst,
+#                width = ".5")
+# # View(nodes)
+# # 
+# write.table(nodes, "part_nodes_resume.tsv", sep = "\t", row.names = F)
+# # network <- visNetwork(nodes, edges, 
+# #                       width = "900px", height = "900px")
 ```
 
-# Informations générales
 
 ```{r info-gen, echo = F}
 df.info <- data.frame("Acronyme" = "Itineris",
-                      "Code décision" = "XXXX",
-                      "Titre" = "XXXX",
-                      "Coordinateur" = "Veronica Ciccolani",
+                      "Code décision" = "AAPG2021",
+                      "Titre" = "Italic metalwork TechnIques during the Early IroN AgE. Rethinking cultural InteractionS",
+                      "Coordinateur" = "Veronica Cicolani",
                       "Affiliation" = "AOROC",
                       "Contact PGD" = "Thomas Huet",
                       "Version du PGD" = 1,
@@ -262,12 +232,12 @@ kable(df.info.t,"html",
 Le plan de gestion des données (PGD, *data management plan*)  suivi par l'ANR Itineris est celui recommendé par le [COmité pour la Science Ouverte (CoSo)](https://www.ouvrirlascience.fr/the-committee-for-open-science/). Il est partagé par l'ensemble des [partenaires](#part) de l'ANR, s'appuie sur les services d'infrastructuration des données d'[Huma-Num](#humanum), etc.
 
 ```{r dmp, echo=F, fig.align='center', fig.height= 7, fig.width= 7, fig.cap="Plan de gestion des données du projet ITINERIS"}
-dmg.steps <- c("collecte\nréutilisation", 
-               "description",
-               "stockage",
-               "analyses",
-               "archivage",
-               "publication")
+dmg.steps <- c("Collecte et\nRéutilisation", 
+               "Description",
+               "Stockage",
+               "Analyses",
+               "Archivage",
+               "Publication")
 dmg.steps.url <- c("#wp3.step.collec",
                    "#wp3.step.describ",
                    "#wp3.bdweb",
@@ -311,56 +281,30 @@ visNetwork(nodes, edges,
 
 
 
-## Collecte et réutilisation des données {#wp3.step.collec}
+## Collecte et Réutilisation {#wp3.step.collec}
 
 L'étude portera sur quelques <span style="color:darkgrey">`r n.obj`</span> objets en alliage de cuivre provenant de <span style="color:darkgrey">`r n.sites`</span> sites archéologiques. Parallèlement, une révision des corpus déjà publiés sera opérée. 
 
 * volumes
 
-### Provenance des données
+### Provenance
 
 *`r stri_rand_lipsum(1)`*
 
-#### Données réutilisées
+### Données réutilisées
 
 *`r stri_rand_lipsum(1)`*
 
-#### Données indédites
+### Données indédites
 
 *`r stri_rand_lipsum(1)`*
 
-### Volumes des données
+### Volumes
 
 *`r stri_rand_lipsum(1)`*
 
-### Outils et méthodes
 
-Les outils et les méthodes employées seront:
-
-```{r methods-tools, echo = F}
-tools.res <- read.table(url.tools.res, header = T, sep = "\t", row.names = NULL)
-tools.res$output <- str_replace(tools.res$output, ".geojson", "[.geojson](#Fgeojson)")
-tools.res$output <- str_replace(tools.res$output, ".json", "[.json](#Fjson)")
-tools.res$output <- str_replace(tools.res$output, ".ply", "[.ply](#Fply)")
-tools.res$output <- str_replace(tools.res$output, ".rdf", "[.rdf](#Frdf)")
-tools.res$output <- str_replace(tools.res$output, ".shp", "[.txt](#Fshp)")
-tools.res$output <- str_replace(tools.res$output, ".u3d", "[.u3d](#Fu3d)")
-tools.res$output <- str_replace(tools.res$output, ".txt", "[.txt](#Fplaintext)")
-tools.res$output <- str_replace(tools.res$output, ".csv", "[.csv](#Fplaintext)")
-tools.res$output <- str_replace(tools.res$output, ".tsv", "[.tsv](#Fplaintext)")
-tools.res$output <- str_replace(tools.res$output, ".x3d", "[.x3d](#Fx3d)")
-tools.res$output <- str_replace(tools.res$output, ".wkt", "[.wkt](#Fplaintext)")
-kable(tools.res,"html",
-      row.names = F,
-      caption = "Outils et méthodes") %>%
-  collapse_rows() %>%
-  kable_styling(full_width = FALSE,
-                position = "center",
-                font_size = 12)
-```
-
-
-### Description {#wp3.step.describ}
+## Description {#wp3.step.describ}
 
 Les données et métadonnées seront décrites selon les ISO-standards, des thésaurus (i.e., vocabulaires contrôlés, *shared vocabularies*) déjà existants et par de nouveaux thésaurus. Ci-dessous nous établissons une liste de référentiels possibles.
 
@@ -402,7 +346,6 @@ Les données et métadonnées seront décrites selon les ISO-standards, des thé
 #                              ISO = iso.url,
 #                              description = description,
 #                              stringsAsFactors = F)
-# ######################################
 # base.iso.url <- "https://www.iso.org/fr/"
 # description <- c("Cuivre et alliages de cuivre",
 #                  "Analyses isotopiques",
@@ -423,7 +366,6 @@ Les données et métadonnées seront décrites selon les ISO-standards, des thé
 #                                   ISO = iso.url,
 #                                   description = description,
 #                                   stringsAsFactors = F)
-# ############################
 # base.iso.url <- "https://www.iso.org/fr/"
 # description <- c("Gestion de la documentation 3D (Lasergrammétrie, RTI)")
 # isos <- c("14739-1:2014l")
@@ -433,7 +375,6 @@ Les données et métadonnées seront décrites selon les ISO-standards, des thé
 #                          ISO = iso.url,
 #                          description = description,
 #                          stringsAsFactors = F)
-# ##############################
 # base.iso.url <- "https://www.iso.org/fr/"
 # description <- c("Modélisation mathématique",
 #                  "Information géographique")
@@ -447,7 +388,6 @@ Les données et métadonnées seront décrites selon les ISO-standards, des thé
 #                           description = description,
 #                           stringsAsFactors = F)
 # 
-# ##############################
 # 
 # 
 # 
@@ -466,62 +406,51 @@ kable(isos.res,"html",
                 font_size=12)
 ```
 
-#### Convention de nommage {#wp3.step.describ.name}
+### Convention de nommage {#wp3.step.describ.name}
 
 *`r stri_rand_lipsum(1)`*
 
-#### Sérialisation {#wp3.step.describ.serial}
-
-*`r stri_rand_lipsum(1)`*
-
-### Stockage {#wp3.step.stock}
+## Stockage {#wp3.step.stock}
 
 Le stockage des données se fera sur une base de données FileMaker (**WP3 T.5A**) consultable en ligne via un navigateur web (technologie WebDirect). Elle sera  hébergée sur les serveurs d’Huma-Num et référencée sur la grille Huma-Num. La Huma-Num héberge déjà de nombreux projets numériques développés par le laboratoire AOROC. Cette structure de données va permettre l'implémentation d'une saisie mult-utilisateurs, la pérennité du stockage et faciliter l'interfaçage avec des données de recherche déjà implémentées par la coordinatrice du projet (VC), le *gazetteer* [Archeolocalis](https://archeolocalis.chronocarto.eu/?zlang=fr), la base de données [BaseFer](https://basefer.chronocarto.eu/). 
 
-La base de données, accessible en ligne, sera rendue interopérable avec les langages de programmation R (package  [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html)) et Python ([pyodbc](https://pypi.org/project/pyodbc/)). Pour faciliter l'intéropérabilité des données (*linked open data*, LOD), les données et leur métadonnées seront retranscrites à la volée par des routines informatiques aux selon les formats ouverts et internationaux:
 
-```{r databases, echo=F}
-base.iso.url <- "https://www.iso.org/fr/"
-description <- c("Représenter/publier les données",
-                 "Représenter/publier les données",
-                 "Décrire les données à partir de vocabulaires",
-                 "Historique des données",
-                 "Historique des données",
-                 "Historique des données",
-                 "Recherche de données")
-format <- c("JSON-LD",
-            "RDF",
-            "XML-TEI",
-            "VoID",
-            "DCAT",
-            "PROV-O",
-            "SPARQL"
-)
-df.imaging <- data.frame(description = description,
-                         format = format,
-                         stringsAsFactors = F)
-kable(df.imaging,"html",
+## Analyses {#wp3.step.anal}
+
+Les outils et les méthodes employées seront:
+
+```{r methods-tools, echo = F}
+tools.res <- read.table(url.tools.res, header = T, sep = "\t", row.names = NULL)
+tools.res$output <- str_replace(tools.res$output, ".geojson", "[.geojson](#Fgeojson)")
+tools.res$output <- str_replace(tools.res$output, ".json", "[.json](#Fjson)")
+tools.res$output <- str_replace(tools.res$output, ".ply", "[.ply](#Fply)")
+tools.res$output <- str_replace(tools.res$output, ".rdf", "[.rdf](#Frdf)")
+tools.res$output <- str_replace(tools.res$output, ".shp", "[.shp](#Fshp)")
+tools.res$output <- str_replace(tools.res$output, ".u3d", "[.u3d](#Fu3d)")
+tools.res$output <- str_replace(tools.res$output, ".txt", "[.txt](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, ".csv", "[.csv](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, ".tsv", "[.tsv](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, ".u3d", "[.u3d](#Fu3d)")
+tools.res$output <- str_replace(tools.res$output, ".x3d", "[.x3d](#Fx3d)")
+tools.res$output <- str_replace(tools.res$output, ".wkt", "[.wkt](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, "plain text", "[plain text](#Fplaintext)")
+tools.res$output <- str_replace(tools.res$output, "EXIF", "[EXIF](#MExif)")
+tools.res$output <- str_replace(tools.res$output, "XMP", "[XMP](#MXmp)")
+kable(tools.res,"html",
       row.names = F,
-      caption = "Base de données") %>%
+      caption = "Outils et méthodes") %>%
   collapse_rows() %>%
   kable_styling(full_width = FALSE,
                 position = "center",
-                font_size=12)
+                font_size = 12)
 ```
 
-Pour les besoins de cette page web, les données sont stockées sur GitHub:
 
-<center>[https://github.com/zoometh/itineris/tree/main/data](https://github.com/zoometh/itineris/tree/main/data)</center>
-
-### Analyses {#wp3.step.anal}
-
-Les analyses se ditribuent entre les différents [axes de recherche](#axes), ou *work packages* (WP), et compteront aussi bien les analyses physico-chimiques que la modélisation géostatistique. Pour la représentation des ensembles structurés, l'analyse de réseaux (*network analysis*) est un formalisme largement utilisé, en même temps qu'une heuristique visuelle (*graph drawing*). Les données utilisées dans l'analyse de réseaux sont basiquement des noeuds (*vertices*) et des liens (*edges*). Dans le projet <span style='font-family: monospace;'><b>ITINERIS</b></span>, cette modélisation elle sera employée à différentes échelle et selon différents paradigmes. Nous nous en étions servis pour modéliser les réseaux d'échanges du Golassecca [@Cicolani19]
-
-### Archivage {#wp3.step.archiv}
+## Archivage {#wp3.step.archiv}
 
 L'archivage sur le temps long se fera avec le [CINES](https://www.huma-num.fr/les-services-par-etapes/#preservation) (v. [Infrastructure Huma-Num](#humanum))
 
-### Publication {#wp3.step.public}
+## Publication {#wp3.step.public}
 
 Le projet prévoit de publier: 
 
@@ -533,15 +462,62 @@ Le projet prévoit de publier:
 
 Ces documents et jeux de données seront seront référencés sur le site web du projet <span style='font-family: monospace;'><b>ITINERIS</b></span>, publiés sur des plateformes en libre accès (e.g. GitLab,  [OpenEdition](https://www.openedition.org/?lang=en)) et associés à des identifiants d'objets numériques (*digital object identifiers*, DOI) prenant en compte leur versionnage (*DOI versioning*) afin de garantir leur [FAIRisation](#openscience).
 
-## Partenaires {#part}
+### Sérialisation {#wp3.step.describ.serial}
+
+La base de données, accessible en ligne, est interopérable avec des procédures R (package  [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html)) et Python ([pyodbc](https://pypi.org/project/pyodbc/)). Ces procédures facilitent l'intéropérabilité des données (*linked data*, LD) et le traitement de leur métadonnées. Celles-ci seront représentées préféretniellement avec JSON-LD, sous forme de graphes RDF. Les données décrites les données à partir de vocabulaires. L'historique des données sérailisée se fait avec VoID, DCAT ou PROV-O. Les données sérialisées sont trouvable avec SPARQL.
+
+
+# Partenaires {#part}
 
 ```{r calibrate, fig.height= 14, fig.width= 14, echo=FALSE, fig.align='center', fig.cap="Description des *Work packages* (WP), *task* (T.) et des acteurs institutionnels"}
-network
+part_nodes.res <- read.table(url.part_nodes.res, header = T, sep = "\t", row.names = NULL)
+part_edges.res <- read.table(url.part_edges.res, header = T, sep = "\t", row.names = NULL)
+visNetwork(part_nodes.res, part_edges.res, 
+                      width = "900px", height = "900px")
 ```
 
-# Notes
+## Infrastructuration des données {#humanum}
 
-Ce document [R](https://www.r-project.org/) + [Markdown](https://rmarkdown.rstudio.com/), déposé sur [GitHub](https://zoometh.github.io/itineris/), a été produit en open-source. 
+L'infrastructure du TGIR [Huma-Num](https://www.huma-num.fr/) -- l'instance française de la *Digital Research Infrastructure for the Arts and Humanities* (DARIAH-EU) -- offre une grille de services facilitant l'inscription des projets de recherche dans le contexte de la Science ouverte. La cohérence de la gestion des données scientifiques du projet sera assurée par l'utilisation de ces services:
+
+* développement intégré dans le conteneur d'application logicielles [GitLab](https://gitlab.huma-num.fr)
+* échange des documents de travail (*working papers*, versionnage) sur le [ShareDocs](https://documentation.huma-num.fr/sharedocs-stockage/)
+* etc.
+
+
+```{r humanum, echo=F}
+humanum.logo.root <- "https://raw.githubusercontent.com/zoometh/golasecca/main/LOD/www/humanum/"
+isidore <- paste0(humanum.logo.root, "isidore.png")
+traiter_ <- paste0(humanum.logo.root, "_traiter.png")
+nakalona <- paste0(humanum.logo.root, "nakalona.png")
+archiver_ <- paste0(humanum.logo.root, "cines.png")
+stocker <- paste0(humanum.logo.root, "sharedocs.png")
+service.fr <- c("Signaler",
+                "Traiter",
+                "Exposer",
+                "Archiver",
+                "Stocker")
+service.url <- c("https://isidore.science/",
+                 "https://www.huma-num.fr/les-services-par-etapes/#traitement",
+                 "https://www.nakalona.fr/",
+                 "https://www.huma-num.fr/les-services-par-etapes/#preservation",
+                 "https://documentation.huma-num.fr/sharedocs-stockage/")
+service <- c(paste0("[",service.fr,"](",service.url,")"))
+service.logo <- c(paste0("![](",isidore," 'ISIDORE'){width=100px}"),
+                  paste0("![](",traiter_," 'R, et autres'){width=100px}"),
+                  paste0("![](",nakalona," 'NAKALONA'){width=100px}"),
+                  paste0("![](",archiver_," 'CINES'){width=100px}"),
+                  paste0("![](",stocker," 'ShareDocs'){width=100px}"))
+df.humanum <- data.frame(service = service,
+                         logo = service.logo,
+                         stringsAsFactors = F)
+kable(df.humanum,"html",
+      row.names = F,
+      caption = "Grille des services de la TGIR Huma-Num") %>%
+  kable_styling(full_width = FALSE,
+                position = "center",
+                font_size=14)
+```
 
 # Lexique
 
@@ -592,10 +568,16 @@ Ce standard pour la description des métadonnées des photographies numériques 
 ### XMP{#MXmp}
 
 Standard pour la description des métadonnées des photographies numériques au format [.xml](#Fxml). Sérialisable ([RDF](#Frdf)/[.xml](#Fxml)), il supporte entièrement le [Dublin Core](https://www.iso.org/standard/71339.html). 
+
+
 ### INSPIRE{#MInspire}
 
 Norme internationale pour les métadonnées spatiales (ISO [19139:2007](https://www.iso.org/standard/32557.html))
 
+
+# Notes
+
+Ce document [R](https://www.r-project.org/) + [Markdown](https://rmarkdown.rstudio.com/), déposé sur [GitHub](https://zoometh.github.io/itineris/), a été produit en open-source. 
 
 # References
 

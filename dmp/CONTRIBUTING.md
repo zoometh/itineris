@@ -3,7 +3,7 @@
 
 ## Data Management Plan (DMP)
 
-If you are a partner of one workpackages (WP) of the Itineris ANR project, you will have to send us information about the data you manage (DMP) during the project time. Start to read the HTML output of the [**fact sheet**](https://zoometh.github.io/itineris/dmp/), and look at what you can improve and complete. Look also the '.tsv' the descriptive data that feeds this **fact sheet**:
+If you are a partner of one workpackages (WP) of the Itineris ANR project, you will have to send us information about the data you manage (DMP) during the project time. Start to read the HTML output of the [**fact sheet**](https://zoometh.github.io/itineris/dmp/), and look at what you can improve and complete. Missing information are quoted 'XXX' (search for this pattern). Look also the '.tsv' the descriptive data that feeds this **fact sheet**:
 
   + [data_resume](https://github.com/zoometh/itineris/blob/main/data/data_resume.tsv): total number of objects by WP, number of sites, etc.
   
