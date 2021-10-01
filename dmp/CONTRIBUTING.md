@@ -9,7 +9,9 @@ If you are a member of the Itineris ANR project, you will have to send us inform
   
   + [tools_resume](https://github.com/zoometh/itineris/blob/main/data/tools_resume.tsv): tools, and outputs resulting from the use of these tools, ordered by WP and tasks.
   
-  + [isos_resume](https://github.com/zoometh/itineris/blob/main/data/isos_resume.tsv): isostandards planned to be used ordered by WP
+  + [isos_resume](https://github.com/zoometh/itineris/blob/main/data/isos_resume.tsv): isostandards planned to be used ordered by WP.
+  
+  + [mbr_nodes_resume](https://github.com/zoometh/itineris/blob/main/data/mbr_nodes_resume.tsv): information about WP, task and members.
 
 To complete or modify the content of these files, you can:
 
@@ -22,7 +24,7 @@ Cc: Veronica Cicolani <veronica.cicolani@ens.fr>
 
   + copy a '.tsv' file (*tabular separated values*), complete it, and send it back to us (eg. [copy/paste 'isos_resume.tsv'](https://raw.githubusercontent.com/zoometh/itineris/main/data/isos_resume.tsv))
   
-Maybe you can start verifying your credits (names and ORCID), here and there..
+Maybe you can start verifying your institutional attachment, WP, task, and credits (names and ORCID), [here](https://zoometh.github.io/itineris/dmp/#Membres_du_projet_et_Work_packages) and [there]((https://github.com/zoometh/itineris/blob/main/data/mbr_nodes_resume.tsv)...
   
 * If you are comfortable with R, GitHub, etc.
 

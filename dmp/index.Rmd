@@ -90,7 +90,7 @@ kable(df.info.t,"html",
   # collapse_rows() %>%
   kable_styling(full_width = FALSE,
                 position = "left",
-                font_size = 10)
+                font_size = 12)
 ```
 
 # Plan de gestion des données {#pgd}
@@ -159,7 +159,7 @@ L'étude portera sur quelques <span style="color:darkgrey">`r n.obj`</span> obje
 
 *`r stri_rand_lipsum(1)`*
 
-### Données indédites
+### Données inédites
 
 *`r stri_rand_lipsum(1)`*
 
