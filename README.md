@@ -5,9 +5,9 @@
 
 The Data Management Plan (DMP) (french: *Plan de Gestion des Données*) is composed on:
 
-* a [**fact sheet**](https://zoometh.github.io/itineris/dmp/) of the DMP
+* a [**fact sheet**](https://zoometh.github.io/itineris/dmp/)
 
-* structured information that feed this **fact sheet**
+* structured information that feed this [**fact sheet**](https://zoometh.github.io/itineris/dmp/)
 
   + A resume of [data volume](https://github.com/zoometh/itineris/blob/main/data/data_resume.tsv) used in Itineris ANR
   
