@@ -1,13 +1,12 @@
-Dublin Core element	Description	Exemple
-Title	RÃ©fÃ©rence Itineris	ITI00001
-Creator	CrÃ©ateur du contenu du fichier	Dupond Albert, Dupuis Jeanne
-Subject	ThÃ¨me du contenu du fichier	Analyses physico-chimiques, 3D
-Description	PrÃ©sentation du contenu du fichier (rÃ©sumÃ©)	texte libre
-Publisher	EntitÃ© responsable de la mise Ã  disposition ou diffusion du fichier (personne, organisation ou service)>AOROC, Universita degli Studi di Torino
-Contributor	EntitÃ© responsable de contributions au contenu du fichier (personne, organisation ou service)>AOROC, Veronica Cicolani
-Date	Date de la version dÃ©finitive (date de crÃ©ation du fichier dans sa version partagÃ©e)	AAAA/MM/JJ
-Type	Nature ou genre du contenu du fichier	v. ["Type" dans le Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/)
-Format	MatÃ©rialisation du fichier (type de medium, dimensions, supports informatiques)	Format du fichier, type MIME (si disponible)
-Identifier	RÃ©fÃ©rence univoque au fichier	Digital Object Identifier (DOI)
-Source	RÃ©fÃ©rence Ã  une ressource dont le fichier dÃ©crit est dÃ©rivÃ©	Digital Object Identifier (DOI)
-Language	Langue du contenu intellectuel du fichier	Code langage
+"Dublin.Core.element"	"Description"	"Exemple"
+"1"	"Title"	"Référence Itineris"	"ITI00001"
+"2"	"Creator"	"Créateur du contenu du fichier"	"Dupond Albert, Dupuis Jeanne"
+"3"	"Subject"	"Thème du contenu du fichier"	"Analyses physico-chimiques, 3D"
+"4"	"Publisher"	"Entité responsable de la mise à disposition ou diffusion du fichier (personne, organisation ou service)"	"AOROC, Universita degli Studi di Torino"
+"5"	"Contributor"	"Entité responsable de contributions au contenu du fichier (personne, organisation ou service)"	"AOROC, Veronica Cicolani"
+"6"	"Date"	"Date de la version définitive (date de création du fichier dans sa version partagée)"	"AAAA/MM/JJ"
+"7"	"Type"	"Nature ou genre du contenu du fichier"	"v. [Type dans le Dublin Core](https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/)"
+"8"	"Format"	"Matérialisation du fichier (type de medium, dimensions, supports informatiques)"	"Format du fichier, type MIME (si disponible)"
+"9"	"Identifier"	"Référence univoque au fichier"	"Digital Object Identifier (DOI)"
+"10"	"Source"	"Référence à une ressource dont le fichier décrit est dérivé"	"Digital Object Identifier (DOI)"
+"11"	"Language"	"Langue du contenu intellectuel du fichier"	"Code langage"
