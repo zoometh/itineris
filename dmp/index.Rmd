@@ -94,7 +94,7 @@ kable(df.info.t,"html",
 
 # Plan de gestion des données {#pgd}
 
-Le plan de gestion des données (PGD, *data management plan*) est préparé dans le carde du [*work package* 3 (WP3](#WP3) T.5B) et partagé par l'ensemble des [membres](#part) de l'ANR Itineris. Il suit les recommandations du [COmité pour la Science Ouverte (CoSo)](https://www.ouvrirlascience.fr/the-committee-for-open-science/) et les principes du FAIR (Facile à retrouver, Accessible, Interopérable, Réutilisable). La gestion des données du projet s'appuie sur les services d'[Huma-Num](#humanum), *`r stri_rand_lipsum(1)`*
+Le plan de gestion des données (PGD, *data management plan*) est préparé dans le carde du [*work package* 3 (WP3](#WP3) T.5B) et partagé par l'ensemble des [membres](#part) de l'ANR Itineris. Il suit les recommandations du [COmité pour la Science Ouverte (CoSo)](https://www.ouvrirlascience.fr/the-committee-for-open-science/), de [OPIDoR](https://dmp.opidor.fr/public_templates) et les principes du FAIR (Facile à retrouver, Accessible, Interopérable, Réutilisable). La gestion des données du projet s'appuie sur les services d'[Huma-Num](#humanum), *`r stri_rand_lipsum(1)`*
 
 ```{r dmp, echo=F, warning= F, fig.align='center', fig.height= 7, fig.width= 7, fig.cap="Plan de gestion des données du projet Itineris"}
 dmp.logo.root <- "https://raw.githubusercontent.com/zoometh/itineris/main/www/dmp/"
@@ -144,11 +144,11 @@ visNetwork(nodes, edges,
            color = list(color = "lightblue", highlight = "red"))
 ```
 
-
+Ce document [R](https://www.r-project.org/) + [Markdown](https://rmarkdown.rstudio.com/), déposé sur [GitHub](https://zoometh.github.io/itineris/), a été produit en open-source. 
 
 ## Collecte et Réutilisation {#wp3.step.collec}
 
-L'étude portera sur quelques <span style="color:darkgrey">`r n.obj`</span> objets en alliage de cuivre provenant de <span style="color:darkgrey">`r n.sites`</span> sites archéologiques. Parallèlement, une révision des corpus déjà publiés sera opérée. 
+L'étude portera sur quelques **<span style="color:darkgrey">`r n.obj`</span>** objets en alliage de cuivre provenant de **<span style="color:darkgrey">`r n.sites`</span>** sites archéologiques. Parallèlement, une révision des corpus déjà publiés sera opérée. 
 
 ### Provenance
 
@@ -259,7 +259,6 @@ tools.res$output <- str_replace(tools.res$output, ".json", "[.json](#Fjson)")
 tools.res$output <- str_replace(tools.res$output, ".ply", "[.ply](#Fply)")
 tools.res$output <- str_replace(tools.res$output, "RDF", "[RDF](#Frdf)")
 tools.res$output <- str_replace(tools.res$output, ".shp", "[.shp](#Fshp)")
-tools.res$output <- str_replace(tools.res$output, ".u3d", "[.u3d](#Fu3d)")
 tools.res$output <- str_replace(tools.res$output, ".txt", "[.txt](#Fplaintext)")
 tools.res$output <- str_replace(tools.res$output, ".csv", "[.csv](#Fplaintext)")
 tools.res$output <- str_replace(tools.res$output, ".tsv", "[.tsv](#Fplaintext)")
@@ -289,27 +288,27 @@ L'archivage sur le temps long se fera avec le [CINES](https://www.huma-num.fr/le
 
 Pour complaire aux directives de la Science ouverte et afin de garantir la  [FAIRisation](www.go-fair.org/fair-principles) des données, le projet Itineris va publier: 
 
-* du code informatique 
-* des documents de travail 
-* des documents de données
-* des articles scientifiques 
+* du code informatique(#pub.code)
+* des documents de travail(#pub.work) 
+* des documents de données(#pub.data)
+* des articles scientifiques(#pub.sci) 
 * des colloques, *workshops*, etc.
 
 Ces documents, jeux de données, articles scientifiques et événements seront seront référencés sur le site web du projet.
 
-### Code informatique
+### Code informatique{#pub.code}
 
-Le code informatique généré par le projet Itineris va être rendu disponible sur les plateformes GitHub et GitLab. Publié préférentiellement sous la forme de fonctions, de *packages* (R), ou de librairies (Python), ce code sera accompagné d'un de sa documentation (README.md, DESCRIPTION, docs/build/html, etc.).
+Le code informatique généré par le projet Itineris va être rendu disponible sur les plateformes GitHub et GitLab. Publié préférentiellement sous la forme de fonctions, de *packages* (R), ou de librairies (Python), ce code sera accompagné de sa documentation (README.md, DESCRIPTION, docs/build/html, etc.).
 
-### Documents de travail
+### Documents de travail{#pub.work}
 
 Des documents de travail (*working papers*) seront publiés avec des identifiants d'objets numériques (*digital object identifiers*, DOI) prenant en compte leur versionnage (*DOI versioning*).
 
-### Documents de données
+### Documents de données{#pub.data}
 
 Des documents de données (*data papers*) seront publiés sur des plateformes open-source et associés a des DOI.
 
-### Articles scientifiques
+### Articles scientifiques{#pub.sci} 
 
 Des articles scientifiques seront publiés sur des plateformes open-source à comité de lecture (eg., [OpenEdition](https://www.openedition.org/?lang=en)), etc., *`r stri_rand_lipsum(1)`*
 
@@ -320,7 +319,7 @@ Des articles scientifiques seront publiés sur des plateformes open-source à co
 example1.ITA <- rio::import('https://github.com/zoometh/itineris/blob/main/data/example_1.xlsx?raw=true')
 ```
 
-La sérialisation des données va permettre d'écrire l'information sous forme de graphes [RDF](#Frdf). Nous prenons ici l'exemple de l'étude de la composition élémentaire d'un échantillon de <span style="color:darkgrey">`r nrow(example1.ITA)`</span> objets italiens. Les données viennent d'un [fichier XLSX déposé sur GitHub](https://github.com/zoometh/itineris/blob/main/data/example_1.xlsx?raw=true) et sont traitées à la volée par R.
+La sérialisation des données va permettre d'écrire l'information sous forme de graphes [RDF](#Frdf). Nous prenons ici l'exemple de l'étude de la composition élémentaire d'un échantillon de **<span style="color:darkgrey">`r nrow(example1.ITA)`</span>** objets italiens. Les données viennent d'un [fichier XLSX déposé sur GitHub](https://github.com/zoometh/itineris/blob/main/data/example_1.xlsx?raw=true) et sont traitées à la volée par R.
 
 ```{r serial-ital, echo = F}
 example1.ITA.t <- t(example1.ITA)
@@ -439,7 +438,12 @@ kable(df.humanum,"html",
 mbr_nodes.res <- read.table(url.mbr_nodes.res, header = T, sep = "\t", row.names = NULL)
 mbr_edges.res <- read.table(url.mbr_edges.res, header = T, sep = "\t", row.names = NULL)
 visNetwork(mbr_nodes.res, mbr_edges.res, 
-           width = "900px", height = "900px")
+           width = "900px", height = "900px") %>%
+  visEdges(shadow = TRUE,
+           smooth = TRUE,
+           arrows =list(to = list(enabled = TRUE, 
+                                  scaleFactor = 1)),
+           color = list(color = "lightblue", highlight = "red"))
 ```
 
 
@@ -513,12 +517,5 @@ Dans sa nouvelle norme HTML5, le consortium Web3D a mis au point une interface J
 
 ### .xml{#Fxml}
 
-Syntaxe extensible créé pour faciliter l'échange automatisé de contenus complexes (arbres, texte enrichi). la syntaxe XML cpermet de définir différents espaces de noms (≠ HTML). C'est l'une des syntaxes possibles du RDF. Un fichier .xml peut être affiché en .css ou .xsl.
-
-
-# Notes
-
-Ce document [R](https://www.r-project.org/) + [Markdown](https://rmarkdown.rstudio.com/), déposé sur [GitHub](https://zoometh.github.io/itineris/), a été produit en open-source. 
-
-
+Syntaxe extensible créé pour faciliter l'échange automatisé de contenus complexes (arbres, texte enrichi). la syntaxe XML cpermet de définir différents espaces de noms (≠ HTML). C'est l'une des syntaxes possibles du [RDF](#Frdf). Un fichier .xml peut être affiché en .css ou .xsl.
 
