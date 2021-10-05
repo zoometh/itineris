@@ -497,7 +497,7 @@ Dérivé de [.json](#Fjson), un objet .geojson peut être une géométrie, une e
 
 ### .json{#Fjson}
 
-C'est LE format le plus courant pour écrire les graphes RDF. Le format .json est en train de remplacer [.xml](#Fxml) comme principal format d'échange de données (v. aussi [.geojson](#Fgeojson) et [JSON-LD](#MJsonLd)).
+C'est LE format le plus courant pour écrire les graphes [RDF](#Frdf). Le format .json est en train de remplacer [.xml](#Fxml) comme principal format d'échange de données (v. aussi [.geojson](#Fgeojson) et [JSON-LD](#MJsonLd)).
 
 ### .ply{#Fply}
 
