@@ -1,0 +1,144 @@
+[ {
+  "@id" : "https://ark.frantiq.fr/ark:/26678/pcrt1tSmMf0Tw8",
+  "@type" : [ "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2007-02-08"
+  } ],
+  "http://purl.org/dc/terms/identifier" : [ {
+    "@value" : "14737"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2014-07-01"
+  } ],
+  "http://purl.org/umu/uneskos#memberOf" : [ {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/pcrtnbDLi2FkAj"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+    "@language" : "fr",
+    "@value" : "broche"
+  }, {
+    "@language" : "en",
+    "@value" : "brooch"
+  }, {
+    "@language" : "de",
+    "@value" : "Brosche"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#broader" : [ {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/pcrtUqBbtbUOzF"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/pcrtkGrjdA3r24"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "fr",
+    "@value" : "Agrafe ou broche articulée par un ressort ou une charnière et dont la pointe (ardillon) se fixait à l'extrémité d'un arc de forme variée, servant à attacher les vêtements flottants et non cousus. (Musée d'Argentomagus)"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
+    "@id" : "http://www.wikidata.org/entity/Q324926"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#inScheme" : [ {
+    "@id" : "https://pactols.frantiq.fr/opentheso/TH_1"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#narrower" : [ {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtgr7oucN3aQ"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtrWoW2YdSWy"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtO3Qqwn66m4"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtbw3cV8M590"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtMjmlpKZYLS"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crt2U4mZzZOpu"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtnSmqPnTnJs"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtcSW0gSdY89"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crt4B3LBULlWG"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtzthRQcZE07"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crt8c7KKTjeNj"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtqzrGjFikgw"
+  }, {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/crtudJz32nZBj"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "de",
+    "@value" : "Fibel"
+  }, {
+    "@language" : "en",
+    "@value" : "fibula"
+  }, {
+    "@language" : "it",
+    "@value" : "fibula"
+  }, {
+    "@language" : "nl",
+    "@value" : "fibula"
+  }, {
+    "@language" : "es",
+    "@value" : "fíbula"
+  }, {
+    "@language" : "fr",
+    "@value" : "fibule"
+  }, {
+    "@language" : "ar",
+    "@value" : "مشبك ذو مِفصلة"
+  } ]
+}, {
+  "@id" : "https://ark.frantiq.fr/ark:/26678/pcrt1tkigfJgSh",
+  "@type" : [ "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2007-02-08"
+  } ],
+  "http://purl.org/dc/terms/identifier" : [ {
+    "@value" : "13000"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2014-07-29"
+  } ],
+  "http://purl.org/umu/uneskos#memberOf" : [ {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/pcrtnbDLi2FkAj"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
+    "@language" : "de",
+    "@value" : "Jüngere Akademie"
+  }, {
+    "@language" : "it",
+    "@value" : "Seconda Accademia"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#broader" : [ {
+    "@id" : "https://ark.frantiq.fr/ark:/26678/pcrtmZKVw3S7El"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#inScheme" : [ {
+    "@id" : "https://pactols.frantiq.fr/opentheso/TH_1"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "es",
+    "@value" : "Academia media"
+  }, {
+    "@language" : "fr",
+    "@value" : "Académie moyenne"
+  }, {
+    "@language" : "it",
+    "@value" : "Media Accademia"
+  }, {
+    "@language" : "nl",
+    "@value" : "Midden Academie"
+  }, {
+    "@language" : "en",
+    "@value" : "Middle Academy"
+  }, {
+    "@language" : "de",
+    "@value" : "Mittlere Akademie"
+  }, {
+    "@language" : "ar",
+    "@value" : "الأكاديمية المتوسطة"
+  } ]
+} ]
